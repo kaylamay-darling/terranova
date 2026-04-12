@@ -1,13 +1,10 @@
 {
-  "itemGroup.terranova": "Example Mod Tab",
-  "block.terranova.example_block": "Example Block",
-  "item.terranova.example_item": "Example Item",
+  "item.terranova.raw_zinc": "Raw Zinc",
+  "item.terranova.zinc_ingot": "Zinc Ingot",
 
-  "terranova.configuration.title": "Terra Nova Configs",
-  "terranova.configuration.section.terranova.common.toml": "Terra Nova Configs",
-  "terranova.configuration.section.terranova.common.toml.title": "Terra Nova Configs",
-  "terranova.configuration.items": "Item List",
-  "terranova.configuration.logDirtBlock": "Log Dirt Block",
-  "terranova.configuration.magicNumberIntroduction": "Magic Number Text",
-  "terranova.configuration.magicNumber": "Magic Number"
+  "block.terranova.zinc_ore": "Zinc Ore",
+  "block.terranova.raw_zinc_block": "Block of Raw Zinc",
+
+  "creativetab.terranova.mod_items": "Items",
+  "creativetab.terranova.mod_blocks": "Blocks"
 }

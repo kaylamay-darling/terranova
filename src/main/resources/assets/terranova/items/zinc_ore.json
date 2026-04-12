@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "terranova:item/zinc_ingot"
+    "model": "terranova:block/zinc_ore"
   }
 }

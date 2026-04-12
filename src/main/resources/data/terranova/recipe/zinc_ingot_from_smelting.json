@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1,
+  "ingredient": "terranova:raw_zinc",
+  "result": {
+    "count": 1,
+    "id": "terranova:zinc_ingot"
+  }
+}

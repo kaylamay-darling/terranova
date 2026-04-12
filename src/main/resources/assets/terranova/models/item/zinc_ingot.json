@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "terranova:item/raw_zinc"
+    "layer0": "terranova:item/zinc_ingot"
   }
 }

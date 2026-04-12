@@ -1,16 +1,11 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "r": {
-      "item": "terranova:raw_zinc"
-    }
-  },
-  "pattern": [
-    "rrr",
-    "rrr",
-    "rrr"
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "terranova:raw_zinc_block"
   ],
   "result": {
-    "id": "terranova:raw_zinc_block"
+    "count": 9,
+    "id": "terranova:raw_zinc"
   }
 }
