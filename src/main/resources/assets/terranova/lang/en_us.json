@@ -1,0 +1,13 @@
+{
+  "itemGroup.terranova": "Example Mod Tab",
+  "block.terranova.example_block": "Example Block",
+  "item.terranova.example_item": "Example Item",
+
+  "terranova.configuration.title": "Terra Nova Configs",
+  "terranova.configuration.section.terranova.common.toml": "Terra Nova Configs",
+  "terranova.configuration.section.terranova.common.toml.title": "Terra Nova Configs",
+  "terranova.configuration.items": "Item List",
+  "terranova.configuration.logDirtBlock": "Log Dirt Block",
+  "terranova.configuration.magicNumberIntroduction": "Magic Number Text",
+  "terranova.configuration.magicNumber": "Magic Number"
+}
