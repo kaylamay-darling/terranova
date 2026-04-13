@@ -9,8 +9,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import net.minecraft.world.item.Items;
-
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(TerraNova.MODID);
 
@@ -23,9 +21,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> ZINC_INGOT = ITEMS.register(
             "zinc_ingot",
-            () -> new Item(new Item.Properties()
-                    .setId(ResourceKey.create(Registries.ITEM,
-                            Identifier.fromNamespaceAndPath(TerraNova.MODID, "zinc_ingot"))))
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );
 
     public static void register(IEventBus eventBus) {

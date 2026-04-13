@@ -1,0 +1,13 @@
+{
+  "values": {
+    "terranova:zinc_block": {
+      "next_oxidation_stage": "terranova:exposed_zinc"
+    },
+    "terranova:exposed_zinc": {
+      "next_oxidation_stage": "terranova:weathered_zinc"
+    },
+    "terranova:weathered_zinc": {
+      "next_oxidation_stage": "terranova:oxidized_zinc"
+    }
+  }
+}

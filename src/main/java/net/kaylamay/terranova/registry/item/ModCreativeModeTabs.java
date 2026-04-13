@@ -35,6 +35,10 @@ public class ModCreativeModeTabs {
                     .displayItems((parameters, output) -> {
                         output.accept(ModBlocks.ZINC_ORE);
                         output.accept(ModBlocks.RAW_ZINC_BLOCK);
+                        output.accept(ModBlocks.ZINC_BLOCK);
+                        output.accept(ModBlocks.EXPOSED_ZINC);
+                        output.accept(ModBlocks.WEATHERED_ZINC);
+                        output.accept(ModBlocks.OXIDIZED_ZINC);
                     })
                     .build());
 

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "terranova:zinc_ore",
+    "terranova:raw_zinc_block",
+    "terranova:zinc_block",
+    "terranova:exposed_zinc",
+    "terranova:weathered_zinc",
+    "terranova:oxidized_zinc"
+  ]
+}

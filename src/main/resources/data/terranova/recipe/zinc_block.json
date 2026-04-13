@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "boat",
+  "key": {
+    "Z": "terranova:zinc_ingot"
+  },
+  "pattern": [
+    "ZZZ",
+    "ZZZ",
+    "ZZZ"
+  ],
+  "result": {
+    "count": 1,
+    "id": "terranova:zinc_block"
+  }
+}
