@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_grass_fiber": {
+      "conditions": {
+        "items": [
+          {
+            "items": "terranova:grass_fiber"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "terranova:wooden_haft"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_grass_fiber"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "terranova:wooden_haft"
+    ]
+  }
+}

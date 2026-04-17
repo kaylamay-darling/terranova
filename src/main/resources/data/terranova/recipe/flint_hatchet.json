@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:stick",
+    "W": "terranova:wooden_haft",
+    "G": "terranova:grass_fiber",
+    "f": "minecraft:flint"
+  },
+  "pattern": [
+    "fGf",
+    " W ",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "terranova:flint_hatchet"
+  }
+}

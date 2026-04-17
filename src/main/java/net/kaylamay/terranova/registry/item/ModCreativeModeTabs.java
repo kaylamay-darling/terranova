@@ -9,6 +9,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -22,8 +23,12 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModItems.ZINC_INGOT.get()))
                     .title(Component.translatable("creativetab.terranova.mod_items"))
                     .displayItems((parameters, output) -> {
+                        output.accept(ModItems.GRASS_FIBER);
+                        output.accept(ModItems.WOODEN_HAFT);
+                        output.accept(ModItems.FLINT_HATCHET);
                         output.accept(ModItems.RAW_ZINC);
                         output.accept(ModItems.ZINC_INGOT);
+                        output.accept(ModItems.BARK);
                     })
                     .build());
 

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:axes",
+    "#minecraft:swords",
+    "#minecraft:spears",
+    "minecraft:trident",
+    "minecraft:mace",
+    "terranova:flint_hatchet"
+  ]
+}

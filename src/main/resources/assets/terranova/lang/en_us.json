@@ -1,13 +1,17 @@
 {
   "item.terranova.raw_zinc": "Raw Zinc",
   "item.terranova.zinc_ingot": "Zinc Ingot",
+  "item.terranova.bark": "Bark",
+  "item.terranova.flint_hatchet": "Flint Hatchet",
+  "item.terranova.grass_fiber": "Grass Fiber",
+  "item.terranova.wooden_haft": "Wooden Haft",
 
   "block.terranova.zinc_ore": "Zinc Ore",
   "block.terranova.raw_zinc_block": "Block of Raw Zinc",
   "block.terranova.zinc_block": "Block of Zinc",
-  "block.terranova.exposed_zinc_block": "Exposed Zinc",
-  "block.terranova.weathered_zinc_block": "Weathered Zinc",
-  "block.terranova.oxidized_zinc_block": "Oxidized Zinc",
+  "block.terranova.exposed_zinc": "Exposed Zinc",
+  "block.terranova.weathered_zinc": "Weathered Zinc",
+  "block.terranova.oxidized_zinc": "Oxidized Zinc",
 
   "creativetab.terranova.mod_items": "Items",
   "creativetab.terranova.mod_blocks": "Blocks"

@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "#minecraft:logs",
+
     "terranova:zinc_ore",
     "terranova:raw_zinc_block",
     "terranova:zinc_block",

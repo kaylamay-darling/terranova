@@ -1,8 +1,10 @@
 package net.kaylamay.terranova;
 
+import net.kaylamay.terranova.event.PlayerEvents;
 import net.kaylamay.terranova.registry.block.ModBlocks;
 import net.kaylamay.terranova.registry.item.ModCreativeModeTabs;
 import net.kaylamay.terranova.registry.item.ModItems;
+import net.neoforged.neoforge.event.level.NoteBlockEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -43,6 +45,8 @@ public class TerraNova {
         modEventBus.addListener(this::commonSetup);
 
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(PlayerEvents.class);
+
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "boat",
+  "key": {
+    "S": "minecraft:stick",
+    "G": "terranova:grass_fiber"
+  },
+  "pattern": [
+    " G",
+    "S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "terranova:wooden_haft"
+  }
+}
