@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:forest",
+    "minecraft:flower_forest",
+    "minecraft:swamp"
+  ],
+  "features": "terranova:oak_hollow_log",
+  "step": "vegetal_decoration"
+}

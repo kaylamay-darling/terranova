@@ -3,6 +3,7 @@
   "values": [
     "#minecraft:leaves",
     "#minecraft:replaceable",
-    "#minecraft:mineable/shovel"
+    "#minecraft:mineable/shovel",
+    "#terranova:hollow_logs"
   ]
 }

@@ -15,4 +15,8 @@ public class ModItemTags {
     public static final TagKey<Item> UNSUPPRESSED_MINE = TagKey.create(
             Registries.ITEM, Identifier.fromNamespaceAndPath(TerraNova.MODID, "unsuppressed_mine")
     );
+
+    public static final TagKey<Item> HATCHETS = TagKey.create(
+            Registries.ITEM, Identifier.fromNamespaceAndPath(TerraNova.MODID, "hatchets")
+    );
 }

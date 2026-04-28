@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:dark_forest",
+  "features": "terranova:dark_oak_hollow_log",
+  "step": "vegetal_decoration"
+}

@@ -13,6 +13,26 @@
   "block.terranova.weathered_zinc": "Weathered Zinc",
   "block.terranova.oxidized_zinc": "Oxidized Zinc",
 
+  "block.terranova.oak_heartwood": "Oak Heartwood",
+  "block.terranova.spruce_heartwood": "Spruce Heartwood",
+  "block.terranova.birch_heartwood": "Birch Heartwood",
+  "block.terranova.jungle_heartwood": "Jungle Heartwood",
+  "block.terranova.dark_oak_heartwood": "Dark Oak Heartwood",
+  "block.terranova.acacia_heartwood": "Acacia Heartwood",
+  "block.terranova.mangrove_heartwood": "Mangrove Heartwood",
+  "block.terranova.cherry_heartwood": "Cherry Heartwood",
+  "block.terranova.pale_oak_heartwood": "Pale Oak Heartwood",
+
+  "block.terranova.oak_hollow_log": "Oak Hollow Log",
+  "block.terranova.spruce_hollow_log": "Spruce Hollow Log",
+  "block.terranova.birch_hollow_log": "Birch Hollow Log",
+  "block.terranova.jungle_hollow_log": "Jungle Hollow Log",
+  "block.terranova.dark_oak_hollow_log": "Dark Oak Hollow Log",
+  "block.terranova.acacia_hollow_log": "Acacia Hollow Log",
+  "block.terranova.mangrove_hollow_log": "Mangrove Hollow Log",
+  "block.terranova.cherry_hollow_log": "Cherry Hollow Log",
+  "block.terranova.pale_oak_hollow_log": "Pale Oak Hollow Log",
+
   "creativetab.terranova.mod_items": "Items",
   "creativetab.terranova.mod_blocks": "Blocks"
 }

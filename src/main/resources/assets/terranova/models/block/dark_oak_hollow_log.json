@@ -1,0 +1,59 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "side": "minecraft:block/dark_oak_log",
+    "end": "minecraft:block/dark_oak_log_top",
+    "inside": "minecraft:block/stripped_dark_oak_log",
+    "particle": "minecraft:block/dark_oak_log"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 4],
+      "faces": {
+        "north": { "texture": "#side", "uv": [0, 0, 16, 16] },
+        "south": { "texture": "#inside", "uv": [0, 0, 16, 16] },
+        "west":  { "texture": "#side", "uv": [0, 0, 4, 16] },
+        "east":  { "texture": "#side", "uv": [12, 0, 16, 16] },
+        "up":    { "texture": "#end", "uv": [0, 0, 16, 4] },
+        "down":  { "texture": "#end", "uv": [0, 12, 16, 16] }
+      }
+    },
+    {
+      "from": [0, 0, 12],
+      "to": [16, 16, 16],
+      "faces": {
+        "north": { "texture": "#inside", "uv": [0, 0, 16, 16] },
+        "south": { "texture": "#side", "uv": [0, 0, 16, 16] },
+        "west":  { "texture": "#side", "uv": [12, 0, 16, 16] },
+        "east":  { "texture": "#side", "uv": [0, 0, 4, 16] },
+        "up":    { "texture": "#end", "uv": [0, 12, 16, 16] },
+        "down":  { "texture": "#end", "uv": [0, 0, 16, 4] }
+      }
+    },
+    {
+      "from": [0, 0, 4],
+      "to": [4, 16, 12],
+      "faces": {
+        "north": { "texture": "#side", "uv": [0, 0, 4, 16] },
+        "south": { "texture": "#side", "uv": [0, 0, 4, 16] },
+        "west":  { "texture": "#side", "uv": [4, 0, 12, 16] },
+        "east":  { "texture": "#inside", "uv": [4, 0, 12, 16] },
+        "up":    { "texture": "#end", "uv": [0, 4, 4, 12] },
+        "down":  { "texture": "#end", "uv": [0, 4, 4, 12] }
+      }
+    },
+    {
+      "from": [12, 0, 4],
+      "to": [16, 16, 12],
+      "faces": {
+        "north": { "texture": "#side", "uv": [0, 0, 4, 16] },
+        "south": { "texture": "#side", "uv": [0, 0, 4, 16] },
+        "west":  { "texture": "#inside", "uv": [4, 0, 12, 16] },
+        "east":  { "texture": "#side", "uv": [4, 0, 12, 16] },
+        "up":    { "texture": "#end", "uv": [12, 4, 16, 12] },
+        "down":  { "texture": "#end", "uv": [12, 4, 16, 12] }
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "terranova:block/spruce_hollow_log"
+    },
+    "axis=x": {
+      "model": "terranova:block/spruce_hollow_log",
+      "z": 90
+    },
+    "axis=z": {
+      "model": "terranova:block/spruce_hollow_log",
+      "x": 90
+    }
+  }
+}

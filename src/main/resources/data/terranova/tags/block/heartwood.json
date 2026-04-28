@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "terranova:oak_heartwood",
+    "terranova:birch_heartwood",
+    "terranova:spruce_heartwood",
+    "terranova:jungle_heartwood",
+    "terranova:acacia_heartwood",
+    "terranova:dark_oak_heartwood",
+    "terranova:mangrove_heartwood",
+    "terranova:cherry_heartwood",
+    "terranova:pale_oak_heartwood"
+  ]
+}

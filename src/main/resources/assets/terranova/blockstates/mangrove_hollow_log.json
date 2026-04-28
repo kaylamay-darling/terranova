@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "terranova:block/mangrove_hollow_log"
+    },
+    "axis=x": {
+      "model": "terranova:block/mangrove_hollow_log",
+      "z": 90
+    },
+    "axis=z": {
+      "model": "terranova:block/mangrove_hollow_log",
+      "x": 90
+    }
+  }
+}

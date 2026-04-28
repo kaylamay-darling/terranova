@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "terranova:oak_hollow_log",
+    "terranova:birch_hollow_log",
+    "terranova:spruce_hollow_log",
+    "terranova:jungle_hollow_log",
+    "terranova:acacia_hollow_log",
+    "terranova:dark_oak_hollow_log",
+    "terranova:mangrove_hollow_log",
+    "terranova:cherry_hollow_log",
+    "terranova:pale_oak_hollow_log"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "terranova:hollow_log",
+  "config": {
+    "log": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "terranova:dark_oak_hollow_log"
+      }
+    }
+  }
+}

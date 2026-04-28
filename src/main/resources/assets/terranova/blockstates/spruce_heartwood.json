@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "terranova:block/spruce_heartwood"
+    },
+    "axis=x": {
+      "model": "terranova:block/spruce_heartwood",
+      "z": 90
+    },
+    "axis=z": {
+      "model": "terranova:block/spruce_heartwood",
+      "x": 90
+    }
+  }
+}

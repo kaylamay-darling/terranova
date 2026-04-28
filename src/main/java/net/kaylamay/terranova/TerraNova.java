@@ -1,9 +1,11 @@
 package net.kaylamay.terranova;
 
+import net.kaylamay.terranova.event.BlockEvents;
 import net.kaylamay.terranova.event.PlayerEvents;
 import net.kaylamay.terranova.registry.block.ModBlocks;
 import net.kaylamay.terranova.registry.item.ModCreativeModeTabs;
 import net.kaylamay.terranova.registry.item.ModItems;
+import net.kaylamay.terranova.worldgen.feature.ModFeatures;
 import net.neoforged.neoforge.event.level.NoteBlockEvent;
 import org.slf4j.Logger;
 
@@ -46,10 +48,13 @@ public class TerraNova {
 
         NeoForge.EVENT_BUS.register(this);
         NeoForge.EVENT_BUS.register(PlayerEvents.class);
+        NeoForge.EVENT_BUS.register(BlockEvents.class);
 
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModFeatures.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
 

@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "main": "terranova:block/oak_heartwood",
+    "particle": "terranova:block/oak_heartwood"
+  },
+  "elements": [
+    {
+      "from": [4, 0, 4],
+      "to": [12, 16, 12],
+      "faces": {
+        "down":  { "texture": "#main",  "uv": [8, 0, 16, 8] },
+        "up":    { "texture": "#main",  "uv": [8, 0, 16, 8] },
+        "north": { "texture": "#main", "uv": [0, 0, 8, 16] },
+        "south": { "texture": "#main", "uv": [0, 0, 8, 16] },
+        "west":  { "texture": "#main", "uv": [0, 0, 8, 16] },
+        "east":  { "texture": "#main", "uv": [0, 0, 8, 16] }
+      }
+    }
+  ]
+}

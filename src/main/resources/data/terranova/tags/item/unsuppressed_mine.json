@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "#minecraft:pickaxes",
-    "terranova:flint_hatchet"
+    "#minecraft:axes",
+    "#minecraft:hoes",
+    "#minecraft:swords",
+    "#terranova:hatchets"
   ]
 }

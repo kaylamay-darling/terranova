@@ -38,6 +38,24 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(Identifier.fromNamespaceAndPath(TerraNova.MODID, "mod_items"))
                     .title(Component.translatable("creativetab.terranova.mod_blocks"))
                     .displayItems((parameters, output) -> {
+                        output.accept(ModBlocks.OAK_HOLLOW_LOG);
+                        output.accept(ModBlocks.SPRUCE_HOLLOW_LOG);
+                        output.accept(ModBlocks.BIRCH_HOLLOW_LOG);
+                        output.accept(ModBlocks.JUNGLE_HOLLOW_LOG);
+                        output.accept(ModBlocks.ACACIA_HOLLOW_LOG);
+                        output.accept(ModBlocks.DARK_OAK_HOLLOW_LOG);
+                        output.accept(ModBlocks.MANGROVE_HOLLOW_LOG);
+                        output.accept(ModBlocks.CHERRY_HOLLOW_LOG);
+                        output.accept(ModBlocks.PALE_OAK_HOLLOW_LOG);
+                        output.accept(ModBlocks.OAK_HEARTWOOD);
+                        output.accept(ModBlocks.SPRUCE_HEARTWOOD);
+                        output.accept(ModBlocks.BIRCH_HEARTWOOD);
+                        output.accept(ModBlocks.JUNGLE_HEARTWOOD);
+                        output.accept(ModBlocks.ACACIA_HEARTWOOD);
+                        output.accept(ModBlocks.DARK_OAK_HEARTWOOD);
+                        output.accept(ModBlocks.MANGROVE_HEARTWOOD);
+                        output.accept(ModBlocks.CHERRY_HEARTWOOD);
+                        output.accept(ModBlocks.PALE_OAK_HEARTWOOD);
                         output.accept(ModBlocks.ZINC_ORE);
                         output.accept(ModBlocks.RAW_ZINC_BLOCK);
                         output.accept(ModBlocks.ZINC_BLOCK);

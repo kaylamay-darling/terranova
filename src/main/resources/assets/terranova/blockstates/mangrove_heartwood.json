@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "terranova:block/mangrove_heartwood"
+    },
+    "axis=x": {
+      "model": "terranova:block/mangrove_heartwood",
+      "z": 90
+    },
+    "axis=z": {
+      "model": "terranova:block/mangrove_heartwood",
+      "x": 90
+    }
+  }
+}
