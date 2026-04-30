@@ -23,7 +23,7 @@ public class HollowLogFeature extends Feature<HollowLogFeatureConfiguration> {
     }
 
     private boolean tryPlacementLog(WorldGenLevel level, BlockPos pos, BlockState state) {
-        if (level.getBlockState(pos).canBeReplaced() && !level.getBlockState(pos.below()).canBeReplaced()) {
+        if ((level.getBlockState(pos).canBeReplaced() || !level.getBlockState(pos).isCollisionShapeFullBlock(level, pos)) && level.getBlockState(pos.below()).isCollisionShapeFullBlock(level, pos.below())) {
             level.setBlock(pos, state, 2);
             return true;
         }

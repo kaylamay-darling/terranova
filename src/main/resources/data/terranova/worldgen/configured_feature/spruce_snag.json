@@ -1,0 +1,11 @@
+{
+  "type": "terranova:snag",
+  "config": {
+    "log": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "terranova:spruce_hollow_log"
+      }
+    }
+  }
+}

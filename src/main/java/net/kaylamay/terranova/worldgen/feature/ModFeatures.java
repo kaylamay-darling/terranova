@@ -19,6 +19,11 @@ public class ModFeatures {
             registryName -> new HollowLogFeature(HollowLogFeatureConfiguration.CODEC)
     );
 
+    public static final DeferredHolder<Feature<?>, SnagFeature> SNAG = FEATURES.register(
+            "snag",
+            registryName -> new SnagFeature(HollowLogFeatureConfiguration.CODEC)
+    );
+
     public static void register(IEventBus eventBus) {
         FEATURES.register(eventBus);
     }

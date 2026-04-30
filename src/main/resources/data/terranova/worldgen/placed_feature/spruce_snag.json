@@ -1,5 +1,5 @@
 {
-  "feature": "terranova:dark_oak_hollow_log",
+  "feature": "terranova:spruce_snag",
   "placement": [
     {
       "type": "minecraft:count",
@@ -7,7 +7,7 @@
     },
     {
       "type": "minecraft:rarity_filter",
-      "chance": 5
+      "chance": 3
     },
     {
       "type": "minecraft:in_square"
