@@ -1,18 +1,18 @@
 {
   "variants": {
-    "facing=north,size=small": { "model": "terranova:block/brown_creeping_mushroom_small" },
-    "facing=south,size=small": { "model": "terranova:block/brown_creeping_mushroom_small", "y": 180 },
-    "facing=west,size=small":  { "model": "terranova:block/brown_creeping_mushroom_small", "y": 270 },
-    "facing=east,size=small":  { "model": "terranova:block/brown_creeping_mushroom_small", "y": 90 },
+    "facing=south,size=small": { "model": "terranova:block/brown_creeping_mushroom_small" },
+    "facing=north,size=small": { "model": "terranova:block/brown_creeping_mushroom_small", "y": 180 },
+    "facing=west,size=small":  { "model": "terranova:block/brown_creeping_mushroom_small", "y": 90 },
+    "facing=east,size=small":  { "model": "terranova:block/brown_creeping_mushroom_small", "y": 270 },
 
-    "facing=north,size=medium": { "model": "terranova:block/brown_creeping_mushroom_medium" },
-    "facing=south,size=medium": { "model": "terranova:block/brown_creeping_mushroom_medium", "y": 180 },
-    "facing=west,size=medium":  { "model": "terranova:block/brown_creeping_mushroom_medium", "y": 270 },
-    "facing=east,size=medium":  { "model": "terranova:block/brown_creeping_mushroom_medium", "y": 90 },
+    "facing=south,size=medium": { "model": "terranova:block/brown_creeping_mushroom_medium" },
+    "facing=north,size=medium": { "model": "terranova:block/brown_creeping_mushroom_medium", "y": 180 },
+    "facing=west,size=medium":  { "model": "terranova:block/brown_creeping_mushroom_medium", "y": 90 },
+    "facing=east,size=medium":  { "model": "terranova:block/brown_creeping_mushroom_medium", "y": 270 },
 
-    "facing=north,size=large": { "model": "terranova:block/brown_creeping_mushroom_large" },
-    "facing=south,size=large": { "model": "terranova:block/brown_creeping_mushroom_large", "y": 180 },
-    "facing=west,size=large":  { "model": "terranova:block/brown_creeping_mushroom_large", "y": 270 },
-    "facing=east,size=large":  { "model": "terranova:block/brown_creeping_mushroom_large", "y": 90 }
+    "facing=south,size=large": { "model": "terranova:block/brown_creeping_mushroom_large" },
+    "facing=north,size=large": { "model": "terranova:block/brown_creeping_mushroom_large", "y": 180 },
+    "facing=west,size=large":  { "model": "terranova:block/brown_creeping_mushroom_large", "y": 90 },
+    "facing=east,size=large":  { "model": "terranova:block/brown_creeping_mushroom_large", "y": 270 }
   }
 }

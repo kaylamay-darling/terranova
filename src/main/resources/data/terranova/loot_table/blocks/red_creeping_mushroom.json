@@ -1,0 +1,49 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "terranova:red_creeping_mushroom",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 1,
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "terranova:red_creeping_mushroom",
+                  "properties": { "size": "small" }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 2,
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "terranova:red_creeping_mushroom",
+                  "properties": { "size": "medium" }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 3,
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "terranova:red_creeping_mushroom",
+                  "properties": { "size": "large" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

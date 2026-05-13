@@ -1,23 +1,16 @@
 package net.kaylamay.terranova.worldgen.feature;
 
 import com.mojang.serialization.Codec;
-import net.kaylamay.terranova.property.CreepingMushroomSize;
-import net.kaylamay.terranova.registry.block.ModBlocks;
-import net.kaylamay.terranova.registry.block.custom.CreepingMushroomBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.VineBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
 public class HollowLogFeature extends Feature<HollowLogFeatureConfiguration> {
     public HollowLogFeature(Codec<HollowLogFeatureConfiguration> codec) {
@@ -75,18 +68,6 @@ public class HollowLogFeature extends Feature<HollowLogFeatureConfiguration> {
                     BlockPos vinePos = pos.relative(side);
 
                     tryPlacementDecoration(level, vinePos, Blocks.VINE.defaultBlockState().setValue(VineBlock.getPropertyForFace(side.getOpposite()), true));
-                } else if (invasionRoll < 0.45) {
-                    Direction side = Direction.Plane.HORIZONTAL.getRandomDirection(random);
-                    BlockPos creepingMushroomPos = pos.relative(side);
-                    CreepingMushroomSize size = CreepingMushroomSize.values()[random.nextInt(CreepingMushroomSize.values().length)];
-
-                    tryPlacementDecoration(level, creepingMushroomPos, ModBlocks.BROWN_CREEPING_MUSHROOM.get().defaultBlockState().setValue(CreepingMushroomBlock.FACING, side.getOpposite()).setValue(CreepingMushroomBlock.SIZE, size));
-                } else if (invasionRoll < 0.6) {
-                    Direction side = Direction.Plane.HORIZONTAL.getRandomDirection(random);
-                    BlockPos creepingMushroomPos = pos.relative(side);
-                    CreepingMushroomSize size = CreepingMushroomSize.values()[random.nextInt(CreepingMushroomSize.values().length)];
-
-                    tryPlacementDecoration(level, creepingMushroomPos, ModBlocks.BROWN_CREEPING_MUSHROOM.get().defaultBlockState().setValue(CreepingMushroomBlock.FACING, side.getOpposite()).setValue(CreepingMushroomBlock.SIZE, size));
                 }
             }
         }

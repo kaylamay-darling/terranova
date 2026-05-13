@@ -1,8 +1,6 @@
 package net.kaylamay.terranova.registry.block.custom;
 
-import net.kaylamay.terranova.TerraNova;
 import net.kaylamay.terranova.property.CreepingMushroomSize;
-import net.kaylamay.terranova.util.ModBlockTags;
 import net.kaylamay.terranova.util.ModItemTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -20,35 +18,27 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.VineBlock;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jspecify.annotations.Nullable;
-import org.lwjgl.system.ffm.mapping.Mapping;
-
-import java.util.Properties;
-
-import static net.kaylamay.terranova.property.CreepingMushroomSize.LARGE;
 
 public class CreepingMushroomBlock extends Block {
-    private static final VoxelShape NORTH_SHAPE = Block.box(0,0,0,16,16,1);
-    private static final VoxelShape SOUTH_SHAPE = Block.box(0,0,15,16,16,16);
-    private static final VoxelShape EAST_SHAPE = Block.box(15,0,0,16,16,16);
-    private static final VoxelShape WEST_SHAPE = Block.box(0,0,0,1,16,16);
+
+    private static final VoxelShape SHAPE_NORTH = Block.box(0, 0, 15, 16, 16, 16); // back against south wall (log side)
+    private static final VoxelShape SHAPE_SOUTH = Block.box(0, 0, 0,  16, 16, 1);
+    private static final VoxelShape SHAPE_EAST  = Block.box(0, 0, 0,  1,  16, 16);
+    private static final VoxelShape SHAPE_WEST  = Block.box(15, 0, 0, 16, 16, 16);
 
     public static final EnumProperty<Direction> FACING = EnumProperty.create("facing", Direction.class, Direction.Plane.HORIZONTAL);
     public static final EnumProperty<CreepingMushroomSize> SIZE = EnumProperty.create("size", CreepingMushroomSize.class);
 
     public CreepingMushroomBlock(Properties properties) {
         super(properties);
-
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
                 .setValue(SIZE, CreepingMushroomSize.SMALL));
@@ -61,31 +51,26 @@ public class CreepingMushroomBlock extends Block {
 
     @Override
     public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
-        Direction face = context.getClickedFace();
+        Direction clickedFace = context.getClickedFace();
 
-        if (!face.getAxis().isHorizontal()) {
-            return null;
+        if (!clickedFace.getAxis().isHorizontal()) {
+            clickedFace = context.getHorizontalDirection().getOpposite();
         }
 
-        BlockState state = this.defaultBlockState().setValue(FACING, face.getOpposite());
+        BlockState state = this.defaultBlockState().setValue(FACING, clickedFace);
         return state.canSurvive(context.getLevel(), context.getClickedPos()) ? state : null;
     }
 
     @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        Direction facing = state.getValue(FACING);
-        BlockPos supportPos = pos.relative(facing);
-        BlockState supportState = level.getBlockState(supportPos);
-
-        if (!supportState.is(ModBlockTags.HOLLOW_LOGS)) {
-            return false;
-        }
-
-        return facing.getAxis().isHorizontal();
+        BlockPos supportPos = pos.relative(state.getValue(FACING).getOpposite());
+        return level.getBlockState(supportPos).is(BlockTags.LOGS);
     }
 
     @Override
-    protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess ticks, BlockPos pos, Direction directionToNeighbour, BlockPos neighbourPos, BlockState neighbourState, RandomSource random) {
+    protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess ticks, BlockPos pos,
+                                     Direction directionToNeighbour, BlockPos neighbourPos, BlockState neighbourState,
+                                     RandomSource random) {
         if (!state.canSurvive(level, pos)) {
             return Blocks.AIR.defaultBlockState();
         }
@@ -95,11 +80,11 @@ public class CreepingMushroomBlock extends Block {
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return switch (state.getValue(FACING)) {
-            case NORTH -> NORTH_SHAPE;
-            case SOUTH -> SOUTH_SHAPE;
-            case EAST -> EAST_SHAPE;
-            case WEST -> WEST_SHAPE;
-            default -> NORTH_SHAPE;
+            case NORTH -> SHAPE_NORTH;
+            case SOUTH -> SHAPE_SOUTH;
+            case EAST  -> SHAPE_EAST;
+            case WEST  -> SHAPE_WEST;
+            default    -> SHAPE_NORTH;
         };
     }
 
@@ -111,20 +96,19 @@ public class CreepingMushroomBlock extends Block {
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         CreepingMushroomSize size = state.getValue(SIZE);
-
         if (size.canGrow() && random.nextFloat() < 0.1f) {
             level.setBlock(pos, state.setValue(SIZE, size.grow()), 2);
         }
     }
 
     @Override
-    protected InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        if (!itemStack.is(ModItemTags.CREEPING_MUSHROOM_SUBSTRATE)) {
+    protected InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos,
+                                          Player player, InteractionHand hand, BlockHitResult hitResult) {
+        if (!itemStack.is(this.asItem())) {
             return InteractionResult.PASS;
         }
 
         CreepingMushroomSize size = state.getValue(SIZE);
-
         if (!size.canGrow()) {
             return InteractionResult.FAIL;
         }

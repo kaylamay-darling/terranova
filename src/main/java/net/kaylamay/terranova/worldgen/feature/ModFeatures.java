@@ -24,6 +24,11 @@ public class ModFeatures {
             registryName -> new SnagFeature(HollowLogFeatureConfiguration.CODEC)
     );
 
+    public static final DeferredHolder<Feature<?>, CreepingMushroomScannerFeature> CREEPING_MUSHROOM_SCANNER = FEATURES.register(
+            "creeping_mushroom_scanner",
+            registryName -> new CreepingMushroomScannerFeature((NoneFeatureConfiguration.CODEC))
+    );
+
     public static void register(IEventBus eventBus) {
         FEATURES.register(eventBus);
     }
