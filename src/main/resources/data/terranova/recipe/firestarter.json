@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "terranova:bark",
+    "minecraft:flint",
+    "terranova:grass_fiber"
+  ],
+  "result": {
+    "id": "terranova:firestarter"
+  }
+}

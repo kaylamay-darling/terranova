@@ -13,6 +13,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.FlintAndSteelItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ToolMaterial;
@@ -89,6 +90,13 @@ public class ModItems {
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
                     .stacksTo(1)
     ));
+
+    public static final DeferredItem<Item> FIRESTARTER = ITEMS.register(
+            "firestarter",
+            registryName -> new FlintAndSteelItem(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+                    .durability(2))
+    );
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

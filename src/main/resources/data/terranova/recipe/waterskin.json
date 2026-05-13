@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:leather",
+    "minecraft:leather",
+    "terranova:grass_fiber"
+  ],
+  "result": {
+    "id": "terranova:waterskin"
+  }
+}
