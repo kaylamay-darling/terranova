@@ -20,7 +20,11 @@ public class ModItemTags {
             Registries.ITEM, Identifier.fromNamespaceAndPath(TerraNova.MODID, "hatchets")
     );
 
-    public static final TagKey<Item> CREEPING_MUSHROOM_SUBSTRATE = TagKey.create(
-            Registries.ITEM, Identifier.fromNamespaceAndPath(TerraNova.MODID, "creeping_mushroom_substrate")
+    public static final TagKey<Item> BROWN_MUSHROOMS = TagKey.create(
+            Registries.ITEM, Identifier.fromNamespaceAndPath(TerraNova.MODID, "brown_mushrooms")
+    );
+
+    public static final TagKey<Item> RED_MUSHROOMS = TagKey.create(
+            Registries.ITEM, Identifier.fromNamespaceAndPath(TerraNova.MODID, "red_mushrooms")
     );
 }

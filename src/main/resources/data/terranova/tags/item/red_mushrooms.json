@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "terranova:brown_creeping_mushroom",
+    "minecraft:red_mushroom",
     "terranova:red_creeping_mushroom"
   ]
 }

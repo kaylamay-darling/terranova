@@ -26,6 +26,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BARK);
                         output.accept(ModItems.WOODEN_HAFT);
                         output.accept(ModItems.FLINT_HATCHET);
+                        output.accept(ModItems.WATERSKIN);
                         output.accept(ModItems.RAW_ZINC);
                         output.accept(ModItems.ZINC_INGOT);
                     })

@@ -1,8 +1,10 @@
 package net.kaylamay.terranova.registry.item;
 
 import net.kaylamay.terranova.TerraNova;
+import net.kaylamay.terranova.registry.ModDataComponents;
 import net.kaylamay.terranova.registry.item.custom.FlintHatchetItem;
 import net.kaylamay.terranova.registry.item.custom.FuelItem;
+import net.kaylamay.terranova.registry.item.custom.WaterskinItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
@@ -80,6 +82,13 @@ public class ModItems {
                     .setId(ResourceKey.create(Registries.ITEM, registryName)),
                     150)
     );
+
+    public static final DeferredItem<Item> WATERSKIN = ITEMS.register(
+            "waterskin",
+            registryName -> new WaterskinItem(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+                    .stacksTo(1)
+    ));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

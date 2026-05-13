@@ -2,6 +2,7 @@ package net.kaylamay.terranova;
 
 import net.kaylamay.terranova.event.BlockEvents;
 import net.kaylamay.terranova.event.PlayerEvents;
+import net.kaylamay.terranova.registry.ModDataComponents;
 import net.kaylamay.terranova.registry.block.ModBlocks;
 import net.kaylamay.terranova.registry.ModCreativeModeTabs;
 import net.kaylamay.terranova.registry.item.ModItems;
@@ -33,6 +34,8 @@ public class TerraNova {
         NeoForge.EVENT_BUS.register(BlockEvents.class);
 
         ModCreativeModeTabs.register(modEventBus);
+        ModDataComponents.register(modEventBus);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 

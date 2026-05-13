@@ -78,7 +78,7 @@ public class FlintHatchetItem extends Item {
 
     @Override
     public boolean mineBlock(ItemStack itemStack, Level level, BlockState state, BlockPos pos, LivingEntity owner) {
-        if (!level.isClientSide() && state.is(FLINT_HATCHET_MINEABLE)) {
+        if (state.is(FLINT_HATCHET_MINEABLE)) {
             itemStack.hurtAndBreak(1, owner, owner.getUsedItemHand());
         }
         return true;
@@ -86,7 +86,7 @@ public class FlintHatchetItem extends Item {
 
     @Override
     public void hurtEnemy(ItemStack itemStack, LivingEntity mob, LivingEntity attacker) {
-        itemStack.hurtAndBreak(1, attacker, attacker.getUsedItemHand());
+            itemStack.hurtAndBreak(1, attacker, attacker.getUsedItemHand());
     }
 
     @Override
