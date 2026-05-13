@@ -1,0 +1,43 @@
+{
+  "values": {
+    "terranova:brown_creeping_mushroom": {
+      "chance": 0.65
+    },
+    "terranova:red_creeping_mushroom": {
+      "chance": 0.65
+    },
+    "terranova:oak_hollow_log": {
+      "chance": 0.85
+    },
+    "terranova:spruce_hollow_log": {
+      "chance": 0.85
+    },
+    "terranova:birch_hollow_log": {
+      "chance": 0.85
+    },
+    "terranova:dark_oak_hollow_log": {
+      "chance": 0.85
+    },
+    "terranova:jungle_hollow_log": {
+      "chance": 0.85
+    },
+    "terranova:acacia_hollow_log": {
+      "chance": 0.85
+    },
+    "terranova:mangrove_hollow_log": {
+      "chance": 0.85
+    },
+    "terranova:cherry_hollow_log": {
+      "chance": 0.85
+    },
+    "terranova:pale_oak_hollow_log": {
+      "chance": 0.85
+    },
+    "terranova:grass_fiber": {
+      "chance": 0.3
+    },
+    "terranova:bark": {
+      "chance": 0.65
+    }
+  }
+}

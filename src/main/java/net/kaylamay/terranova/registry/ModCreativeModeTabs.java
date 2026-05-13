@@ -1,15 +1,14 @@
-package net.kaylamay.terranova.registry.item;
+package net.kaylamay.terranova.registry;
 
-import com.jcraft.jorbis.Block;
 import net.kaylamay.terranova.TerraNova;
 import net.kaylamay.terranova.registry.block.ModBlocks;
+import net.kaylamay.terranova.registry.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -24,11 +23,11 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.terranova.mod_items"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.GRASS_FIBER);
+                        output.accept(ModItems.BARK);
                         output.accept(ModItems.WOODEN_HAFT);
                         output.accept(ModItems.FLINT_HATCHET);
                         output.accept(ModItems.RAW_ZINC);
                         output.accept(ModItems.ZINC_INGOT);
-                        output.accept(ModItems.BARK);
                     })
                     .build());
 
@@ -56,6 +55,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MANGROVE_HEARTWOOD);
                         output.accept(ModBlocks.CHERRY_HEARTWOOD);
                         output.accept(ModBlocks.PALE_OAK_HEARTWOOD);
+                        output.accept(ModBlocks.BROWN_CREEPING_MUSHROOM);
+                        output.accept(ModBlocks.RED_CREEPING_MUSHROOM);
                         output.accept(ModBlocks.ZINC_ORE);
                         output.accept(ModBlocks.RAW_ZINC_BLOCK);
                         output.accept(ModBlocks.ZINC_BLOCK);

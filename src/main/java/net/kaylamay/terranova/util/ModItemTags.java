@@ -19,4 +19,8 @@ public class ModItemTags {
     public static final TagKey<Item> HATCHETS = TagKey.create(
             Registries.ITEM, Identifier.fromNamespaceAndPath(TerraNova.MODID, "hatchets")
     );
+
+    public static final TagKey<Item> CREEPING_MUSHROOM_SUBSTRATE = TagKey.create(
+            Registries.ITEM, Identifier.fromNamespaceAndPath(TerraNova.MODID, "creeping_mushroom_substrate")
+    );
 }

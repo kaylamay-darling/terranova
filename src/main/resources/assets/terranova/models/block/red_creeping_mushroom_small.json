@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:block/block",
+  "render_type": "cutout",
+  "ambientocclusion": false,
+  "textures": {
+    "mushroom_large": "terranova:block/red_creeping_mushroom_large",
+    "mushroom_small": "terranova:block/red_creeping_mushroom_small"
+  },
+  "elements": [
+    {
+      "from": [5, 4, 0],
+      "to": [15, 5, 5],
+      "faces": {
+        "up":    { "texture": "#mushroom_large", "uv": [1, 0, 11, 5] },
+        "down":  { "texture": "#mushroom_large", "uv": [1, 6, 11, 11] },
+        "south": { "texture": "#mushroom_large", "uv": [1, 5, 11, 6] },
+        "east":  { "texture": "#mushroom_large", "uv": [11, 0, 12, 5], "rotation": 90 },
+        "west":  { "texture": "#mushroom_large", "uv": [0, 0, 1, 5], "rotation": 270 }
+      }
+    },
+    {
+      "from": [3, 11, 0],
+      "to": [10, 12, 4],
+      "faces": {
+        "up":    { "texture": "#mushroom_small", "uv": [1, 0, 8, 4] },
+        "down":  { "texture": "#mushroom_small", "uv": [1, 5, 8, 9] },
+        "south": { "texture": "#mushroom_small", "uv": [1, 4, 8, 5] },
+        "east":  { "texture": "#mushroom_small", "uv": [8, 0, 9, 4], "rotation": 90 },
+        "west":  { "texture": "#mushroom_small", "uv": [0, 0, 1, 4], "rotation": 270 }
+      }
+    }
+  ]
+}

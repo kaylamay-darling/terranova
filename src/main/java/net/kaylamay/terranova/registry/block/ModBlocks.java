@@ -2,6 +2,7 @@ package net.kaylamay.terranova.registry.block;
 
 import com.ibm.icu.impl.CacheValue;
 import net.kaylamay.terranova.TerraNova;
+import net.kaylamay.terranova.registry.block.custom.CreepingMushroomBlock;
 import net.kaylamay.terranova.registry.block.custom.HeartwoodBlock;
 import net.kaylamay.terranova.registry.block.custom.HollowBlock;
 import net.kaylamay.terranova.registry.block.custom.ZincBlock;
@@ -233,6 +234,24 @@ public class ModBlocks {
                     BlockBehaviour.Properties.of()
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
                             .strength(1.0f, 1.0f)
+            )
+    );
+
+    public static final DeferredBlock<Block> BROWN_CREEPING_MUSHROOM = registerBlock(
+            "brown_creeping_mushroom",
+            registryName -> new CreepingMushroomBlock(
+                    BlockBehaviour.Properties.of()
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .noOcclusion().noCollision().randomTicks()
+            )
+    );
+
+    public static final DeferredBlock<Block> RED_CREEPING_MUSHROOM = registerBlock(
+            "red_creeping_mushroom",
+            registryName -> new CreepingMushroomBlock(
+                    BlockBehaviour.Properties.of()
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .noOcclusion().noCollision().randomTicks()
             )
     );
 
