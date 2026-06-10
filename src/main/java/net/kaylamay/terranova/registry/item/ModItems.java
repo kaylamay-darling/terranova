@@ -1,10 +1,8 @@
 package net.kaylamay.terranova.registry.item;
 
 import net.kaylamay.terranova.TerraNova;
-import net.kaylamay.terranova.registry.block.ModBlocks;
 import net.kaylamay.terranova.registry.item.custom.BoneHatchetItem;
 import net.kaylamay.terranova.registry.item.custom.FlintHatchetItem;
-import net.kaylamay.terranova.registry.item.custom.FuelItem;
 import net.kaylamay.terranova.registry.item.custom.WaterskinItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
@@ -36,9 +34,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> BARK = ITEMS.register(
             "bark",
-            registryName -> new FuelItem(new Item.Properties()
-                    .setId(ResourceKey.create(Registries.ITEM, registryName)),
-                    200)
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );
 
     public static final DeferredItem<Item> FLINT_HATCHET = ITEMS.register(
@@ -93,16 +90,14 @@ public class ModItems {
 
     public static final DeferredItem<Item> GRASS_FIBER = ITEMS.register(
             "grass_fiber",
-            registryName -> new FuelItem(new Item.Properties()
-                    .setId(ResourceKey.create(Registries.ITEM, registryName)),
-                    75)
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );
 
     public static final DeferredItem<Item> WOODEN_HAFT = ITEMS.register(
             "wooden_haft",
-            registryName -> new FuelItem(new Item.Properties()
-                    .setId(ResourceKey.create(Registries.ITEM, registryName)),
-                    150)
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );
 
     public static final DeferredItem<Item> WATERSKIN_EMPTY = ITEMS.register(

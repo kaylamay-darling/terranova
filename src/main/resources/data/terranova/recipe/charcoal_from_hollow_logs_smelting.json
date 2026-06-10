@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.15,
+  "ingredient": "#terranova:hollow_logs",
+  "result": {
+    "id": "minecraft:charcoal"
+  }
+}

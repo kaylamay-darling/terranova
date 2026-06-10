@@ -38,6 +38,9 @@
     },
     "terranova:bark": {
       "chance": 0.65
+    },
+    "minecraft:mud_block": {
+      "chance": 0.85
     }
   }
 }

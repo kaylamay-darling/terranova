@@ -2,11 +2,8 @@ package net.kaylamay.terranova;
 
 import net.kaylamay.terranova.event.BlockEvents;
 import net.kaylamay.terranova.event.PlayerEvents;
-import net.kaylamay.terranova.registry.ModBlockEntities;
-import net.kaylamay.terranova.registry.ModDataComponents;
-import net.kaylamay.terranova.registry.ModLootModifiers;
+import net.kaylamay.terranova.registry.*;
 import net.kaylamay.terranova.registry.block.ModBlocks;
-import net.kaylamay.terranova.registry.ModCreativeModeTabs;
 import net.kaylamay.terranova.registry.item.ModItems;
 import net.kaylamay.terranova.worldgen.feature.ModFeatures;
 import org.slf4j.Logger;
@@ -43,7 +40,8 @@ public class TerraNova {
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
 
-
+        ModRecipeSerializers.register(modEventBus);
+        ModRecipeTypes.register(modEventBus);
 
         ModFeatures.register(modEventBus);
 

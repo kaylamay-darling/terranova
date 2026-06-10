@@ -1,6 +1,7 @@
 package net.kaylamay.terranova.registry.block;
 
 import com.ibm.icu.impl.CacheValue;
+import com.mojang.serialization.MapCodec;
 import net.kaylamay.terranova.TerraNova;
 import net.kaylamay.terranova.registry.block.custom.*;
 import net.kaylamay.terranova.registry.item.ModItems;
@@ -9,12 +10,20 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.FurnaceMenu;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
@@ -312,6 +321,17 @@ public class ModBlocks {
                     return layers == 1;
                 }
             }
+    );
+
+    public static final DeferredBlock<Block> KILN = registerBlock(
+            "kiln",
+            registryName -> new KilnBlock(
+                    BlockBehaviour.Properties.of()
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .strength(3.5f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+            )
     );
 
     private static <T extends Block> void registerBlockItem(String name, Supplier<T> block, Item.Properties properties) {

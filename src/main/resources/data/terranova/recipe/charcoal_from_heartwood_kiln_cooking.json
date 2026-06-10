@@ -1,0 +1,10 @@
+{
+  "type": "terranova:kiln_cooking",
+  "category": "misc",
+  "cookingtime": 400,
+  "experience": 0.15,
+  "ingredient": "#terranova:heartwood",
+  "result": {
+    "id": "minecraft:charcoal"
+  }
+}
