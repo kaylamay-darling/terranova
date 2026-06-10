@@ -35,9 +35,11 @@ public class PlayerEvents {
         Player player = event.getEntity();
         ItemStack itemStack = player.getMainHandItem();
         BlockState blockState = event.getState();
-        if (itemStack.is(UNSUPPRESSED_MINE) || blockState.is(SOFT_MATERIALS)) {
-            return;
-        }
+
+        if (itemStack.is(UNSUPPRESSED_MINE)) return;
+        if (!itemStack.isEmpty()) return;
+        if (blockState.is(SOFT_MATERIALS)) return;
+
         event.setNewSpeed(event.getNewSpeed() * 0.05f);
     }
 
@@ -46,6 +48,7 @@ public class PlayerEvents {
         Player player = event.getEntity();
         Entity attackedEntity = event.getTarget();
         ItemStack itemStack = player.getMainHandItem();
+
         if (itemStack.is(UNSUPPRESSED_ATTACK) || !(attackedEntity instanceof LivingEntity)) {
             return;
         }

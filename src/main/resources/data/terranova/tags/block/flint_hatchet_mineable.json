@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
     "#terranova:soft_materials",
-    "#minecraft:mineable/shovel",
     "#terranova:hollow_logs"
   ]
 }

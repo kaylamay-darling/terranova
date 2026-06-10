@@ -4,6 +4,7 @@ import com.ibm.icu.impl.CacheValue;
 import net.kaylamay.terranova.TerraNova;
 import net.kaylamay.terranova.registry.block.custom.*;
 import net.kaylamay.terranova.registry.item.ModItems;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
@@ -11,9 +12,15 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -281,15 +288,31 @@ public class ModBlocks {
             )
     );
 
-    public static final DeferredBlock<Block> ASH_BLOCK = registerBlock(
-            "ash_block",
+    public static final DeferredBlock<Block> ASH_LAYER = registerBlock(
+            "ash_layer",
             registryName -> new SnowLayerBlock(
                     BlockBehaviour.Properties.of()
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
                             .strength(0.1f)
                             .sound(SoundType.SAND)
                             .replaceable()
-            ));
+            ) {
+                @Override
+                public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+                    return state.getValue(LAYERS) == 8 ? Shapes.block() : super.getCollisionShape(state, level, pos, context);
+                }
+
+                @Override
+                public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+                    int layers = state.getValue(LAYERS);
+                    if (layers == 8) return false;
+                    if (context.getItemInHand().is(asItem())) {
+                        return true;
+                    }
+                    return layers == 1;
+                }
+            }
+    );
 
     private static <T extends Block> void registerBlockItem(String name, Supplier<T> block, Item.Properties properties) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), properties));
@@ -299,9 +322,9 @@ public class ModBlocks {
         ModItems.ITEMS.registerSimpleBlockItem(name, block);
     }
 
-    private static <T extends Block> DeferredBlock<Block> registerBlock(String name, Function<Identifier, ? extends T> block){
+    private static <T extends Block> DeferredBlock<Block> registerBlock(String name, Function<Identifier, ? extends T> block) {
         DeferredBlock<Block> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name,toReturn);
+        registerBlockItem(name, toReturn);
         return toReturn;
     }
 

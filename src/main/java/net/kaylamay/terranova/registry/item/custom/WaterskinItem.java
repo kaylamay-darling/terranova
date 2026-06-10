@@ -46,12 +46,20 @@ public class WaterskinItem extends Item {
         BlockPos pos = blockHit.getBlockPos();
 
         if (!filled) {
+            // Empty waterskin — fill from water source
             if (level.getFluidState(pos).getType() == Fluids.WATER
                     && level.getFluidState(pos).isSource()) {
 
                 if (!level.isClientSide()) {
-                    stack.shrink(1);
-                    player.addItem(new ItemStack(ModItems.WATERSKIN_FILLED.get()));
+                    ItemStack filled = new ItemStack(ModItems.WATERSKIN_FILLED.get());
+                    if (stack.getCount() == 1) {
+                        player.setItemInHand(hand, filled);
+                    } else {
+                        stack.shrink(1);
+                        if (!player.getInventory().add(filled)) {
+                            player.drop(filled, false);
+                        }
+                    }
 
                     level.playSound(null, player.blockPosition(),
                             SoundEvents.BUCKET_FILL,
@@ -61,20 +69,26 @@ public class WaterskinItem extends Item {
 
                 return InteractionResult.SUCCESS;
             }
-        } else {
-            if (!level.isClientSide()) {
 
-                ItemStack replacement = filled
-                        ? new ItemStack(ModItems.WATERSKIN_EMPTY.get())
-                        : new ItemStack(ModItems.WATERSKIN_FILLED.get());
+        } else {
+            // Filled waterskin — only act on campfires or valid pour targets
+            BlockState state = level.getBlockState(pos);
+            BlockPos place = pos.relative(blockHit.getDirection());
+            boolean canPour = (state.is(BlockTags.CAMPFIRES) && state.getValue(CampfireBlock.LIT))
+                    || (level.getBlockState(place).canBeReplaced() && !level.getFluidState(place).isSource());
+
+            if (!canPour) return InteractionResult.PASS;
+
+            if (!level.isClientSide()) {
+                ItemStack empty = new ItemStack(ModItems.WATERSKIN_EMPTY.get());
 
                 if (!player.isCreative()) {
                     if (stack.getCount() == 1) {
-                        player.setItemInHand(hand, replacement);
+                        player.setItemInHand(hand, empty);
                     } else {
                         stack.shrink(1);
-                        if (!player.getInventory().add(replacement)) {
-                            player.drop(replacement, false);
+                        if (!player.getInventory().add(empty)) {
+                            player.drop(empty, false);
                         }
                     }
                 }
@@ -86,26 +100,17 @@ public class WaterskinItem extends Item {
                         SoundSource.PLAYERS,
                         1.0f, 1.0f);
 
-                BlockState state = level.getBlockState(pos);
-
                 if (state.is(BlockTags.CAMPFIRES) && state.getValue(CampfireBlock.LIT)) {
                     level.setBlock(pos, state.setValue(CampfireBlock.LIT, false), 2);
-
                     level.playSound(null, pos,
                             SoundEvents.GENERIC_EXTINGUISH_FIRE,
                             SoundSource.BLOCKS,
                             1.0f, 1.0f);
                 } else {
-                    BlockPos place = pos.relative(blockHit.getDirection());
-
-                    if (level.getBlockState(place).canBeReplaced()
-                            && !level.getFluidState(place).isSource()) {
-
-                        level.setBlock(place,
-                                Blocks.WATER.defaultBlockState()
-                                        .setValue(LiquidBlock.LEVEL, 7),
-                                2);
-                    }
+                    level.setBlock(place,
+                            Blocks.WATER.defaultBlockState()
+                                    .setValue(LiquidBlock.LEVEL, 7),
+                            2);
                 }
             }
 

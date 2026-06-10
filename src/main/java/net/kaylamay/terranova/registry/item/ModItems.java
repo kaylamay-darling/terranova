@@ -52,7 +52,7 @@ public class ModItems {
                                             Attributes.ATTACK_DAMAGE,
                                             new AttributeModifier(
                                                     Identifier.fromNamespaceAndPath(TerraNova.MODID, "flint_hatchet_damage"),
-                                                    1.0,
+                                                    2.0,
                                                     AttributeModifier.Operation.ADD_VALUE),
                                             EquipmentSlotGroup.MAINHAND)
                                     .add(
@@ -84,7 +84,7 @@ public class ModItems {
                                             Attributes.ATTACK_SPEED,
                                             new AttributeModifier(
                                                     Identifier.fromNamespaceAndPath(TerraNova.MODID, "bone_hatchet_speed"),
-                                                    -2.8,
+                                                    -2.0,
                                                     AttributeModifier.Operation.ADD_VALUE),
                                             EquipmentSlotGroup.MAINHAND)
                                     .build()

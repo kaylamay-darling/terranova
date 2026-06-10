@@ -45,7 +45,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.terranova.mod_blocks"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModBlocks.FIELD_CRAFTING_TABLE);
-                        output.accept(ModBlocks.ASH_BLOCK);
+                        output.accept(ModBlocks.ASH_LAYER);
                         output.accept(ModBlocks.OAK_HOLLOW_LOG);
                         output.accept(ModBlocks.SPRUCE_HOLLOW_LOG);
                         output.accept(ModBlocks.BIRCH_HOLLOW_LOG);

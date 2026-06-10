@@ -1,5 +1,6 @@
 package net.kaylamay.terranova.registry.item.custom;
 
+import net.kaylamay.terranova.TerraNova;
 import net.kaylamay.terranova.registry.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -18,7 +19,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 
-import static net.kaylamay.terranova.util.ModBlockTags.BONE_HATCHET_MINEABLE;
+import static net.kaylamay.terranova.util.ModBlockTags.*;
 
 public class BoneHatchetItem extends Item {
     public BoneHatchetItem(Properties properties) {
@@ -59,11 +60,10 @@ public class BoneHatchetItem extends Item {
 
     @Override
     public float getDestroySpeed(ItemStack itemStack, BlockState state) {
-        if (state.is(BONE_HATCHET_MINEABLE)) {
-            return 1.2f;
-        }
-            return 0.2f;
-        }
+        if (state.is(SOFT_MATERIALS)) return 1.0f;
+        if (state.is(BONE_HATCHET_MINEABLE)) return 1.2f;
+        return 0.2f;
+    }
 
     @Override
     public boolean mineBlock(ItemStack itemStack, Level level, BlockState state, BlockPos pos, LivingEntity owner) {
@@ -81,5 +81,10 @@ public class BoneHatchetItem extends Item {
     @Override
     public boolean canPerformAction(ItemInstance stack, ItemAbility itemAbility) {
         return ItemAbilities.DEFAULT_AXE_ACTIONS.contains(itemAbility);
+    }
+
+    @Override
+    public boolean isCorrectToolForDrops(ItemStack stack, BlockState state) {
+        return state.is(BONE_HATCHET_MINEABLE);
     }
 }

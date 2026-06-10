@@ -29,7 +29,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 
-import static net.kaylamay.terranova.util.ModBlockTags.FLINT_HATCHET_MINEABLE;
+import static net.kaylamay.terranova.util.ModBlockTags.*;
 
 public class FlintHatchetItem extends Item {
     public FlintHatchetItem(Properties properties) {
@@ -70,11 +70,10 @@ public class FlintHatchetItem extends Item {
 
     @Override
     public float getDestroySpeed(ItemStack itemStack, BlockState state) {
-        if (state.is(FLINT_HATCHET_MINEABLE)) {
-            return 0.8f;
-        }
-            return 0.2f;
-        }
+        if (state.is(SOFT_MATERIALS)) return 1.0f;
+        if (state.is(FLINT_HATCHET_MINEABLE)) return 0.8f;
+        return 0.2f;
+    }
 
     @Override
     public boolean mineBlock(ItemStack itemStack, Level level, BlockState state, BlockPos pos, LivingEntity owner) {
@@ -92,5 +91,10 @@ public class FlintHatchetItem extends Item {
     @Override
     public boolean canPerformAction(ItemInstance stack, ItemAbility itemAbility) {
         return ItemAbilities.DEFAULT_AXE_ACTIONS.contains(itemAbility);
+    }
+
+    @Override
+    public boolean isCorrectToolForDrops(ItemStack stack, BlockState state) {
+       return state.is(FLINT_HATCHET_MINEABLE);
     }
 }

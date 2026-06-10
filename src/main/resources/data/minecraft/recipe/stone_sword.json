@@ -3,11 +3,12 @@
   "category": "equipment",
   "key": {
     "#": "terranova:wooden_haft",
+    "L": "minecraft:leather",
     "X": "#minecraft:stone_tool_materials"
   },
   "pattern": [
     "X",
-    "X",
+    "XL",
     "#"
   ],
   "result": {
