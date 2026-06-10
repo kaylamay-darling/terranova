@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": "minecraft:stick"
+  },
+  "result": {
+    "id": "terranova:field_crafting_table",
+    "count": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "parent": "terranova:collect_flint",
+  "display": {
+    "icon": {
+      "id": "terranova:flint_hatchet"
+    },
+    "title": {
+      "text": "Flint and Hatchet"
+    },
+    "description": {
+      "text": "Craft a flint hatchet."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "crafted_flint_hatchet": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "terranova:flint_hatchet"
+      }
+    }
+  }
+}

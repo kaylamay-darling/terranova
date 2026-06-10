@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "top": "terranova:block/field_crafting_table_top",
+    "side": "terranova:block/field_crafting_table_side",
+    "particle": "terranova:block/field_crafting_table_side"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "up":    { "texture": "#top", "uv": [0, 0, 16 , 16] },
+        "north": { "texture": "#side", "uv": [0, 0, 16 , 16] },
+        "south": { "texture": "#side", "uv": [0, 0, 16 , 16] },
+        "east":  { "texture": "#side", "uv": [0, 0, 16 , 16] },
+        "west":  { "texture": "#side", "uv": [0, 0, 16 , 16] }
+      }
+    },
+    {
+      "from": [0, 10, 0],
+      "to": [16, 10, 16],
+      "faces": {
+        "down": { "texture": "#top" },
+        "up":   { "texture": "#top" }
+      }
+    }
+  ]
+}

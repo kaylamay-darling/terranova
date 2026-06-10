@@ -1,22 +1,17 @@
 package net.kaylamay.terranova.registry.item;
 
 import net.kaylamay.terranova.TerraNova;
-import net.kaylamay.terranova.registry.ModDataComponents;
+import net.kaylamay.terranova.registry.block.ModBlocks;
 import net.kaylamay.terranova.registry.item.custom.FlintHatchetItem;
 import net.kaylamay.terranova.registry.item.custom.FuelItem;
 import net.kaylamay.terranova.registry.item.custom.WaterskinItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.server.packs.resources.Resource;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.FlintAndSteelItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -89,7 +84,7 @@ public class ModItems {
             registryName -> new WaterskinItem(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
                     .stacksTo(1)
-    ));
+            ));
 
     public static final DeferredItem<Item> FIRESTARTER = ITEMS.register(
             "firestarter",

@@ -4,7 +4,8 @@
   "ambientocclusion": false,
   "textures": {
     "mushroom_large": "terranova:block/brown_creeping_mushroom_large",
-    "mushroom_small": "terranova:block/brown_creeping_mushroom_small"
+    "mushroom_small": "terranova:block/brown_creeping_mushroom_small",
+    "particle": "terranova:block/brown_creeping_mushroom_large"
   },
   "elements": [
     {

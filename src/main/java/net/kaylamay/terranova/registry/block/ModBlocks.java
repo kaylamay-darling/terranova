@@ -2,10 +2,7 @@ package net.kaylamay.terranova.registry.block;
 
 import com.ibm.icu.impl.CacheValue;
 import net.kaylamay.terranova.TerraNova;
-import net.kaylamay.terranova.registry.block.custom.CreepingMushroomBlock;
-import net.kaylamay.terranova.registry.block.custom.HeartwoodBlock;
-import net.kaylamay.terranova.registry.block.custom.HollowBlock;
-import net.kaylamay.terranova.registry.block.custom.ZincBlock;
+import net.kaylamay.terranova.registry.block.custom.*;
 import net.kaylamay.terranova.registry.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
@@ -32,8 +29,16 @@ public class ModBlocks {
             registryName -> new DropExperienceBlock(UniformInt.of(2, 4),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_ORE)
                             .setId(ResourceKey.create(Registries.BLOCK, registryName)
-            )
-    ));
+                            )
+            ));
+
+    public static final DeferredBlock<Block> DEEPSLATE_ZINC_ORE = registerBlock(
+            "deepslate_zinc_ore",
+            registryName -> new DropExperienceBlock(UniformInt.of(2, 4),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_COPPER_ORE)
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName)
+                            )
+            ));
 
     public static final DeferredBlock<Block> RAW_ZINC_BLOCK = registerBlock(
             "raw_zinc_block",
@@ -44,13 +49,13 @@ public class ModBlocks {
     );
 
     public static final DeferredBlock<Block> ZINC_BLOCK = registerBlock(
-           "zinc_block",
-           registryName -> new ZincBlock(
-                   WeatheringCopper.WeatherState.UNAFFECTED,
-                   BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
-                           .setId(ResourceKey.create(Registries.BLOCK, registryName))
-                           .randomTicks()
-           )
+            "zinc_block",
+            registryName -> new ZincBlock(
+                    WeatheringCopper.WeatherState.UNAFFECTED,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .randomTicks()
+            )
     );
 
     public static final DeferredBlock<Block> EXPOSED_ZINC = registerBlock(
@@ -160,7 +165,7 @@ public class ModBlocks {
             "oak_hollow_log",
             registryName -> new HollowBlock(
                     BlockBehaviour.Properties.of()
-                    .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
                             .strength(1.0f, 1.0f)
             )
     );
@@ -252,6 +257,16 @@ public class ModBlocks {
                     BlockBehaviour.Properties.of()
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
                             .noOcclusion().noCollision().randomTicks()
+            )
+    );
+
+    public static final DeferredBlock<Block> FIELD_CRAFTING_TABLE = registerBlock(
+            "field_crafting_table",
+            registryName -> new FieldCraftingTableBlock(
+                    BlockBehaviour.Properties.of()
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .strength(1.0f, 1.0f)
+                            .noOcclusion()
             )
     );
 

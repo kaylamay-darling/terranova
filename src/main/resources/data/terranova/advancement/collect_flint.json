@@ -1,0 +1,29 @@
+{
+  "parent": "terranova:craft_wooden_haft",
+  "display": {
+    "icon": {
+      "id": "minecraft:flint"
+    },
+    "title": {
+      "text": "Gravelling"
+    },
+    "description": {
+      "text": "Harvest flint from gravel."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "has_flint": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:flint"
+          }
+        ]
+      }
+    }
+  }
+}

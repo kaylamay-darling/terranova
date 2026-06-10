@@ -1,8 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#minecraft:leaves",
-    "#minecraft:replaceable",
+    "#terranova:soft_materials",
     "#minecraft:mineable/shovel",
     "#terranova:hollow_logs"
   ]

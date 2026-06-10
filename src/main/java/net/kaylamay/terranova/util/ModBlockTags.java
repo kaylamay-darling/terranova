@@ -18,4 +18,8 @@ public class ModBlockTags {
     public static final TagKey<Block> HOLLOW_LOGS = TagKey.create(
             Registries.BLOCK, Identifier.fromNamespaceAndPath(TerraNova.MODID, "hollow_logs")
     );
+
+    public static final TagKey<Block> SOFT_MATERIALS = TagKey.create(
+            Registries.BLOCK, Identifier.fromNamespaceAndPath(TerraNova.MODID, "soft_materials")
+    );
 }

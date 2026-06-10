@@ -24,6 +24,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import java.util.function.Predicate;
 
 import static net.kaylamay.terranova.util.ModBlockTags.HOLLOW_LOGS;
+import static net.kaylamay.terranova.util.ModBlockTags.SOFT_MATERIALS;
 import static net.kaylamay.terranova.util.ModItemTags.UNSUPPRESSED_ATTACK;
 import static net.kaylamay.terranova.util.ModItemTags.UNSUPPRESSED_MINE;
 
@@ -34,7 +35,7 @@ public class PlayerEvents {
         ItemStack itemStack = player.getMainHandItem();
         BlockState blockState = event.getState();
 
-        if (itemStack.is(UNSUPPRESSED_MINE) || blockState.is(BlockTags.LEAVES) || blockState.is(BlockTags.REPLACEABLE) || blockState.is(HOLLOW_LOGS)) {
+        if (itemStack.is(UNSUPPRESSED_MINE) || blockState.is(SOFT_MATERIALS)) {
             return;
         }
 

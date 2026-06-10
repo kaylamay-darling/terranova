@@ -1,0 +1,25 @@
+{
+  "parent": "terranova:collect_grass_fiber",
+  "display": {
+    "icon": {
+      "id": "terranova:wooden_haft"
+    },
+    "title": {
+      "text": "President Haft"
+    },
+    "description": {
+      "text": "Craft a wooden haft."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "crafted_wooden_haft": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "terranova:wooden_haft"
+      }
+    }
+  }
+}

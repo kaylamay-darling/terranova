@@ -9,6 +9,7 @@
   "item.terranova.firestarter": "Firestarter",
 
   "block.terranova.zinc_ore": "Zinc Ore",
+  "block.terranova.deepslate_zinc_ore": "Deepslate Zinc Ore",
   "block.terranova.raw_zinc_block": "Block of Raw Zinc",
   "block.terranova.zinc_block": "Block of Zinc",
   "block.terranova.exposed_zinc": "Exposed Zinc",
@@ -37,6 +38,7 @@
 
   "block.terranova.brown_creeping_mushroom": "Brown Creeping Mushroom",
   "block.terranova.red_creeping_mushroom": "Red Creeping Mushroom",
+  "block.terranova.field_crafting_table": "Field Crafting Table",
 
   "creativetab.terranova.mod_items": "Items",
   "creativetab.terranova.mod_blocks": "Blocks"

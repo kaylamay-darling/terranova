@@ -39,6 +39,7 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(Identifier.fromNamespaceAndPath(TerraNova.MODID, "mod_items"))
                     .title(Component.translatable("creativetab.terranova.mod_blocks"))
                     .displayItems((parameters, output) -> {
+                        output.accept(ModBlocks.FIELD_CRAFTING_TABLE);
                         output.accept(ModBlocks.OAK_HOLLOW_LOG);
                         output.accept(ModBlocks.SPRUCE_HOLLOW_LOG);
                         output.accept(ModBlocks.BIRCH_HOLLOW_LOG);
@@ -62,6 +63,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.ZINC_ORE);
                         output.accept(ModBlocks.RAW_ZINC_BLOCK);
                         output.accept(ModBlocks.ZINC_BLOCK);
+                        output.accept(ModBlocks.DEEPSLATE_ZINC_ORE);
                         output.accept(ModBlocks.EXPOSED_ZINC);
                         output.accept(ModBlocks.WEATHERED_ZINC);
                         output.accept(ModBlocks.OXIDIZED_ZINC);
