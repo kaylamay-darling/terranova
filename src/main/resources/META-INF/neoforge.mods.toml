@@ -1,0 +1,29 @@
+license="All Rights Reserved"
+
+[[mods]]
+modId="terranova"
+version="1.0.0"
+displayName="Terra Nova"
+
+authors="Kayla May"
+
+description='''
+A fusion of Vanilla enhancements with magic.
+'''
+
+[[mixins]]
+config = "terranova.mixins.json"
+
+[[dependencies.terranova]]
+modId="neoforge"
+type="required"
+versionRange="[21,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.terranova]]
+modId="minecraft"
+type="required"
+versionRange="[1.21,)"
+ordering="NONE"
+side="BOTH"
