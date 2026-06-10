@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "terranova:waterskin_filled",
+    "terranova:bovine_shard",
+    "terranova:ash"
+  ],
+  "result": {
+    "id": "terranova:refined_bovine_shard"
+  }
+}

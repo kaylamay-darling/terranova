@@ -11,6 +11,10 @@ public class ModBlockTags {
             Registries.BLOCK, Identifier.fromNamespaceAndPath(TerraNova.MODID, "flint_hatchet_mineable")
     );
 
+    public static final TagKey<Block> BONE_HATCHET_MINEABLE = TagKey.create(
+            Registries.BLOCK, Identifier.fromNamespaceAndPath(TerraNova.MODID, "bone_hatchet_mineable")
+    );
+
     public static final TagKey<Block> HEARTWOOD = TagKey.create(
             Registries.BLOCK, Identifier.fromNamespaceAndPath(TerraNova.MODID, "heartwood")
     );
@@ -21,5 +25,9 @@ public class ModBlockTags {
 
     public static final TagKey<Block> SOFT_MATERIALS = TagKey.create(
             Registries.BLOCK, Identifier.fromNamespaceAndPath(TerraNova.MODID, "soft_materials")
+    );
+
+    public static final TagKey<Block> STRIPPED_LOGS = TagKey.create(
+            Registries.BLOCK, Identifier.fromNamespaceAndPath(TerraNova.MODID, "stripped_logs")
     );
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "terranova:flint_hatchet"
+    "terranova:flint_hatchet",
+    "terranova:bone_hatchet"
   ]
 }

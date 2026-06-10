@@ -1,13 +1,13 @@
 {
   "replace": false,
   "values": [
-    "#minecraft:logs",
-    "#terranova:heartwood",
     "terranova:zinc_ore",
+    "terranova:deepslate_zinc_ore",
     "terranova:raw_zinc_block",
     "terranova:zinc_block",
     "terranova:exposed_zinc",
     "terranova:weathered_zinc",
-    "terranova:oxidized_zinc"
+    "terranova:oxidized_zinc",
+    "#minecraft:logs"
   ]
 }

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "terranova:cherry_heartwood"
+  ],
+  "result": {
+    "count": 2,
+    "id": "minecraft:cherry_planks"
+  }
+}

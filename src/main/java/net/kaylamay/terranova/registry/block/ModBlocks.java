@@ -8,6 +8,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -242,21 +243,31 @@ public class ModBlocks {
             )
     );
 
-    public static final DeferredBlock<Block> BROWN_CREEPING_MUSHROOM = registerBlock(
+    public static final DeferredBlock<Block> BROWN_CREEPING_MUSHROOM = registerBlockWithCustomItem(
             "brown_creeping_mushroom",
             registryName -> new CreepingMushroomBlock(
                     BlockBehaviour.Properties.of()
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
                             .noOcclusion().noCollision().randomTicks()
+            ),
+            props -> props.food(new FoodProperties.Builder()
+                    .nutrition(1)
+                    .saturationModifier(0.4f)
+                    .build()
             )
     );
 
-    public static final DeferredBlock<Block> RED_CREEPING_MUSHROOM = registerBlock(
+    public static final DeferredBlock<Block> RED_CREEPING_MUSHROOM = registerBlockWithCustomItem(
             "red_creeping_mushroom",
             registryName -> new CreepingMushroomBlock(
                     BlockBehaviour.Properties.of()
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
                             .noOcclusion().noCollision().randomTicks()
+            ),
+            props -> props.food(new FoodProperties.Builder()
+                    .nutrition(1)
+                    .saturationModifier(0.4f)
+                    .build()
             )
     );
 
@@ -270,13 +281,40 @@ public class ModBlocks {
             )
     );
 
-    public static <T extends Block> void registerBlockItem(String name, Supplier<T> block){
+    public static final DeferredBlock<Block> ASH_BLOCK = registerBlock(
+            "ash_block",
+            registryName -> new SnowLayerBlock(
+                    BlockBehaviour.Properties.of()
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .strength(0.1f)
+                            .sound(SoundType.SAND)
+                            .replaceable()
+            ));
+
+    private static <T extends Block> void registerBlockItem(String name, Supplier<T> block, Item.Properties properties) {
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), properties));
+    }
+
+    private static <T extends Block> void registerBlockItem(String name, Supplier<T> block) {
         ModItems.ITEMS.registerSimpleBlockItem(name, block);
     }
 
     private static <T extends Block> DeferredBlock<Block> registerBlock(String name, Function<Identifier, ? extends T> block){
         DeferredBlock<Block> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name,toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> DeferredBlock<Block> registerBlockWithCustomItem(String name, Function<Identifier, ? extends T> block, Function<Item.Properties, Item.Properties> itemProperties) {
+        DeferredBlock<Block> toReturn = BLOCKS.register(name, block);
+        ModItems.ITEMS.register(name, () -> {
+            Identifier id = toReturn.getId();
+            ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(id.getNamespace(), id.getPath()));
+            return new BlockItem(
+                    toReturn.get(),
+                    itemProperties.apply(new Item.Properties().setId(key))
+            );
+        });
         return toReturn;
     }
 

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:stick",
+    "W": "terranova:wooden_haft",
+    "L": "minecraft:leather",
+    "r": "terranova:refined_bovine_shard"
+  },
+  "pattern": [
+    "rLr",
+    " W ",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "terranova:bone_hatchet"
+  }
+}

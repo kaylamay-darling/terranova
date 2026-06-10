@@ -14,10 +14,6 @@ public class ModDataComponents {
     public static final DeferredRegister.DataComponents COMPONENTS =
             DeferredRegister.createDataComponents(Registries.DATA_COMPONENT_TYPE, TerraNova.MODID);
 
-    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> FILLED =
-            COMPONENTS.register("filled", () -> DataComponentType.<Boolean>builder()
-                    .persistent(Codec.BOOL).build());
-
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> USES_REMAINING =
             COMPONENTS.register("uses_remaining", () ->
                     DataComponentType.<Integer>builder().persistent(Codec.INT).build());

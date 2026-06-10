@@ -19,15 +19,20 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> MOD_ITEMS = CREATIVE_MODE_TAB.register("mod_items",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModItems.ZINC_INGOT.get()))
+                    .icon(() -> new ItemStack(ModItems.GRASS_FIBER.get()))
                     .title(Component.translatable("creativetab.terranova.mod_items"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.GRASS_FIBER);
                         output.accept(ModItems.BARK);
                         output.accept(ModItems.WOODEN_HAFT);
                         output.accept(ModItems.FLINT_HATCHET);
+                        output.accept(ModItems.BONE_HATCHET);
+                        output.accept(ModItems.BOVINE_SHARD);
+                        output.accept(ModItems.REFINED_BOVINE_SHARD);
                         output.accept(ModItems.FIRESTARTER);
-                        output.accept(ModItems.WATERSKIN);
+                        output.accept(ModItems.WATERSKIN_EMPTY);
+                        output.accept(ModItems.WATERSKIN_FILLED);
+                        output.accept(ModItems.ASH);
                         output.accept(ModItems.RAW_ZINC);
                         output.accept(ModItems.ZINC_INGOT);
                     })
@@ -35,11 +40,12 @@ public class ModCreativeModeTabs {
 
   public static final Supplier<CreativeModeTab> MOD_BLOCKS = CREATIVE_MODE_TAB.register("mod_block",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModBlocks.RAW_ZINC_BLOCK))
+                    .icon(() -> new ItemStack(ModBlocks.FIELD_CRAFTING_TABLE))
                     .withTabsBefore(Identifier.fromNamespaceAndPath(TerraNova.MODID, "mod_items"))
                     .title(Component.translatable("creativetab.terranova.mod_blocks"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModBlocks.FIELD_CRAFTING_TABLE);
+                        output.accept(ModBlocks.ASH_BLOCK);
                         output.accept(ModBlocks.OAK_HOLLOW_LOG);
                         output.accept(ModBlocks.SPRUCE_HOLLOW_LOG);
                         output.accept(ModBlocks.BIRCH_HOLLOW_LOG);
@@ -61,9 +67,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BROWN_CREEPING_MUSHROOM);
                         output.accept(ModBlocks.RED_CREEPING_MUSHROOM);
                         output.accept(ModBlocks.ZINC_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_ZINC_ORE);
                         output.accept(ModBlocks.RAW_ZINC_BLOCK);
                         output.accept(ModBlocks.ZINC_BLOCK);
-                        output.accept(ModBlocks.DEEPSLATE_ZINC_ORE);
                         output.accept(ModBlocks.EXPOSED_ZINC);
                         output.accept(ModBlocks.WEATHERED_ZINC);
                         output.accept(ModBlocks.OXIDIZED_ZINC);

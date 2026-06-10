@@ -14,6 +14,7 @@ public class CampfireMixin {
     @Inject(method = "getPlacementState", at = @At("RETURN"), cancellable = true)
     private void forceUnlitCampfire(BlockPlaceContext context, CallbackInfoReturnable<BlockState> cir) {
         BlockState state = cir.getReturnValue();
+        if (state == null) return;
 
         if (state.getBlock() instanceof CampfireBlock) {
             if (state.hasProperty(CampfireBlock.LIT)) {

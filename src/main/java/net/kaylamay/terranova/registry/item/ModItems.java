@@ -2,6 +2,7 @@ package net.kaylamay.terranova.registry.item;
 
 import net.kaylamay.terranova.TerraNova;
 import net.kaylamay.terranova.registry.block.ModBlocks;
+import net.kaylamay.terranova.registry.item.custom.BoneHatchetItem;
 import net.kaylamay.terranova.registry.item.custom.FlintHatchetItem;
 import net.kaylamay.terranova.registry.item.custom.FuelItem;
 import net.kaylamay.terranova.registry.item.custom.WaterskinItem;
@@ -51,7 +52,7 @@ public class ModItems {
                                             Attributes.ATTACK_DAMAGE,
                                             new AttributeModifier(
                                                     Identifier.fromNamespaceAndPath(TerraNova.MODID, "flint_hatchet_damage"),
-                                                    0.5,
+                                                    1.0,
                                                     AttributeModifier.Operation.ADD_VALUE),
                                             EquipmentSlotGroup.MAINHAND)
                                     .add(
@@ -59,6 +60,31 @@ public class ModItems {
                                             new AttributeModifier(
                                                     Identifier.fromNamespaceAndPath(TerraNova.MODID, "flint_hatchet_speed"),
                                                     -3.0,
+                                                    AttributeModifier.Operation.ADD_VALUE),
+                                            EquipmentSlotGroup.MAINHAND)
+                                    .build()
+                    )
+            ));
+
+    public static final DeferredItem<Item> BONE_HATCHET = ITEMS.register(
+            "bone_hatchet",
+            registryName -> new BoneHatchetItem(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+                    .durability(95)
+                    .attributes(
+                            ItemAttributeModifiers.builder()
+                                    .add(
+                                            Attributes.ATTACK_DAMAGE,
+                                            new AttributeModifier(
+                                                    Identifier.fromNamespaceAndPath(TerraNova.MODID, "bone_hatchet_damage"),
+                                                    3.0,
+                                                    AttributeModifier.Operation.ADD_VALUE),
+                                            EquipmentSlotGroup.MAINHAND)
+                                    .add(
+                                            Attributes.ATTACK_SPEED,
+                                            new AttributeModifier(
+                                                    Identifier.fromNamespaceAndPath(TerraNova.MODID, "bone_hatchet_speed"),
+                                                    -2.8,
                                                     AttributeModifier.Operation.ADD_VALUE),
                                             EquipmentSlotGroup.MAINHAND)
                                     .build()
@@ -79,11 +105,19 @@ public class ModItems {
                     150)
     );
 
-    public static final DeferredItem<Item> WATERSKIN = ITEMS.register(
-            "waterskin",
+    public static final DeferredItem<Item> WATERSKIN_EMPTY = ITEMS.register(
+            "waterskin_empty",
             registryName -> new WaterskinItem(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
-                    .stacksTo(1)
+                    .stacksTo(1), false
+            ));
+
+    public static final DeferredItem<Item> WATERSKIN_FILLED = ITEMS.register(
+            "waterskin_filled",
+            registryName -> new WaterskinItem(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+                    .craftRemainder(ModItems.WATERSKIN_EMPTY.get())
+                    .stacksTo(1), true
             ));
 
     public static final DeferredItem<Item> FIRESTARTER = ITEMS.register(
@@ -91,6 +125,24 @@ public class ModItems {
             registryName -> new FlintAndSteelItem(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
                     .durability(2))
+    );
+
+    public static final DeferredItem<Item> BOVINE_SHARD = ITEMS.register(
+            "bovine_shard",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
+    );
+
+    public static final DeferredItem<Item> REFINED_BOVINE_SHARD = ITEMS.register(
+            "refined_bovine_shard",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
+    );
+
+    public static final DeferredItem<Item> ASH = ITEMS.register(
+            "ash",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );
 
     public static void register(IEventBus eventBus) {

@@ -2,10 +2,15 @@
   "replace": false,
   "values": [
     "#minecraft:axes",
-    "#minecraft:swords",
+    "minecraft:stone_sword",
+    "minecraft:golden_sword",
+    "minecraft:copper_sword",
+    "minecraft:iron_sword",
+    "minecraft:diamond_sword",
+    "minecraft:netherite_sword",
     "#minecraft:spears",
     "minecraft:trident",
     "minecraft:mace",
-    "terranova:flint_hatchet"
+    "#terranova:hatchets"
   ]
 }

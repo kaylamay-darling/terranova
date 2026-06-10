@@ -1,6 +1,7 @@
 package net.kaylamay.terranova.event;
 
 import net.kaylamay.terranova.TerraNova;
+import net.kaylamay.terranova.registry.item.ModItems;
 import net.kaylamay.terranova.util.ModItemTags;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
@@ -34,11 +35,9 @@ public class PlayerEvents {
         Player player = event.getEntity();
         ItemStack itemStack = player.getMainHandItem();
         BlockState blockState = event.getState();
-
         if (itemStack.is(UNSUPPRESSED_MINE) || blockState.is(SOFT_MATERIALS)) {
             return;
         }
-
         event.setNewSpeed(event.getNewSpeed() * 0.05f);
     }
 
@@ -47,11 +46,9 @@ public class PlayerEvents {
         Player player = event.getEntity();
         Entity attackedEntity = event.getTarget();
         ItemStack itemStack = player.getMainHandItem();
-
         if (itemStack.is(UNSUPPRESSED_ATTACK) || !(attackedEntity instanceof LivingEntity)) {
             return;
         }
-
         event.setCanceled(true);
         player.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(0.35);
     }

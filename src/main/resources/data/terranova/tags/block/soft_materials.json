@@ -5,6 +5,8 @@
     "#minecraft:replaceable",
     "minecraft:gravel",
     "minecraft:sand",
-    "terranova:field_crafting_table"
+    "minecraft:mud",
+    "terranova:field_crafting_table",
+    "terranova:ash_block"
   ]
 }

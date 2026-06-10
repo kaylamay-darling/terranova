@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "terranova:zinc_ore",
+    "terranova:deepslate_zinc_ore",
     "terranova:raw_zinc_block",
     "terranova:zinc_block",
     "terranova:exposed_zinc",

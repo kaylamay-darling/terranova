@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#terranova:flint_hatchet_mineable",
+    "#terranova:stripped_logs",
+    "#terranova:heartwood",
+    "#minecraft:base_stone_overworld"
+  ]
+}

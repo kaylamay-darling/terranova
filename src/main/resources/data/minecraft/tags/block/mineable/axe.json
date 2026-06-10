@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "#terranova:heartwood",
-    "#terranova:hollow_logs"
+    "#terranova:hollow_logs",
+    "terranova:field_crafting_table"
   ]
 }

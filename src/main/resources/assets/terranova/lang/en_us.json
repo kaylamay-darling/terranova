@@ -3,10 +3,15 @@
   "item.terranova.zinc_ingot": "Zinc Ingot",
   "item.terranova.bark": "Bark",
   "item.terranova.flint_hatchet": "Flint Hatchet",
+  "item.terranova.bone_hatchet": "Bone Hatchet",
   "item.terranova.grass_fiber": "Grass Fiber",
   "item.terranova.wooden_haft": "Wooden Haft",
-  "item.terranova.waterskin": "Waterskin",
+  "item.terranova.waterskin_empty": "Empty Waterskin",
+  "item.terranova.waterskin_filled": "Filled Waterskin",
   "item.terranova.firestarter": "Firestarter",
+  "item.terranova.bovine_shard": "Bovine Shard",
+  "item.terranova.refined_bovine_shard": "Refined Bovine Shard",
+  "item.terranova.ash": "Ash",
 
   "block.terranova.zinc_ore": "Zinc Ore",
   "block.terranova.deepslate_zinc_ore": "Deepslate Zinc Ore",
@@ -37,8 +42,12 @@
   "block.terranova.pale_oak_hollow_log": "Pale Oak Hollow Log",
 
   "block.terranova.brown_creeping_mushroom": "Brown Creeping Mushroom",
+  "item.terranova.red_creeping_mushroom": "Red Creeping Mushroom",
+  "item.terranova.brown_creeping_mushroom": "Brown Creeping Mushroom",
   "block.terranova.red_creeping_mushroom": "Red Creeping Mushroom",
+
   "block.terranova.field_crafting_table": "Field Crafting Table",
+  "block.terranova.ash_block": "Ash Block",
 
   "creativetab.terranova.mod_items": "Items",
   "creativetab.terranova.mod_blocks": "Blocks"

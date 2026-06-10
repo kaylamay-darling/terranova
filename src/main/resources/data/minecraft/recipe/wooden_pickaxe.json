@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "terranova:wooden_haft",
+    "G": "terranova:grass_fiber",
+    "X": "#minecraft:wooden_tool_materials"
+  },
+  "pattern": [
+    "XXX",
+    " G ",
+    " # "
+  ],
+  "result": {
+    "id": "minecraft:wooden_pickaxe"
+  }
+}
