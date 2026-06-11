@@ -31,7 +31,7 @@ public class CampfireRandomTickMixin {
 
     @Unique private static final int MAX_RADIUS = 5;
     @Unique private static final int HEAL_INTERVAL = 40;
-    @Unique private static final int SPREAD_CHANCE = 1000;
+    @Unique private static final int SPREAD_CHANCE = 2000;
 
     @Inject(method = "cookTick", at = @At("TAIL"))
     private static void terranova$onTick(

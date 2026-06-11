@@ -37,7 +37,6 @@ public class PlayerEvents {
         BlockState blockState = event.getState();
 
         if (itemStack.is(UNSUPPRESSED_MINE)) return;
-        if (!itemStack.isEmpty()) return;
         if (blockState.is(SOFT_MATERIALS)) return;
 
         event.setNewSpeed(event.getNewSpeed() * 0.05f);
