@@ -148,7 +148,7 @@ public class ModItems {
 
     public static final DeferredItem<Item> ASH = ITEMS.register(
             "ash",
-            registryName -> new Item(new Item.Properties()
+            registryName -> new BoneMealItem(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );
 

@@ -307,17 +307,10 @@ public class ModBlocks {
                             .replaceable()
             ) {
                 @Override
-                public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-                    return state.getValue(LAYERS) == 8 ? Shapes.block() : super.getCollisionShape(state, level, pos, context);
-                }
-
-                @Override
                 public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
                     int layers = state.getValue(LAYERS);
                     if (layers == 8) return false;
-                    if (context.getItemInHand().is(asItem())) {
-                        return true;
-                    }
+                    if (context.getItemInHand().is(asItem())) return true;
                     return layers == 1;
                 }
             }

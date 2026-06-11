@@ -7,9 +7,9 @@
     "X": "#minecraft:wooden_tool_materials"
   },
   "pattern": [
-    "X",
+    "X ",
     "XL",
-    "#"
+    "# "
   ],
   "result": {
     "id": "minecraft:wooden_sword"

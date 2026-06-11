@@ -3,15 +3,15 @@
   "category": "equipment",
   "key": {
     "#": "terranova:wooden_haft",
-    "L": "minecraft:leather",
-    "X": "#minecraft:stone_tool_materials"
+    "S": "terranova:steel_wire",
+    "X": "minecraft:copper_ingot"
   },
   "pattern": [
-    "X ",
-    "XL",
-    "# "
+    "XX",
+    " S",
+    " #"
   ],
   "result": {
-    "id": "minecraft:stone_sword"
+    "id": "minecraft:copper_hoe"
   }
 }
