@@ -11,9 +11,10 @@
   "item.terranova.waterskin_empty": "Empty Waterskin",
   "item.terranova.waterskin_filled": "Filled Waterskin",
   "item.terranova.firestarter": "Firestarter",
-  "item.terranova.bovine_shard": "Bovine Shard",
-  "item.terranova.refined_bovine_shard": "Refined Bovine Shard",
+  "item.terranova.bovid_shard": "Bovid Shard",
+  "item.terranova.refined_bovid_shard": "Refined Bovid Shard",
   "item.terranova.ash": "Ash",
+  "item.terranova.raw_hide": "Raw Hide",
 
   "block.terranova.zinc_ore": "Zinc Ore",
   "block.terranova.deepslate_zinc_ore": "Deepslate Zinc Ore",

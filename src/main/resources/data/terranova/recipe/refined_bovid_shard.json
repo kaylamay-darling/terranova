@@ -3,10 +3,10 @@
   "category": "misc",
   "ingredients": [
     "terranova:waterskin_filled",
-    "terranova:bovine_shard",
+    "terranova:bovid_shard",
     "terranova:ash"
   ],
   "result": {
-    "id": "terranova:refined_bovine_shard"
+    "id": "terranova:refined_bovid_shard"
   }
 }

@@ -134,20 +134,26 @@ public class ModItems {
                     .durability(2))
     );
 
-    public static final DeferredItem<Item> BOVINE_SHARD = ITEMS.register(
-            "bovine_shard",
+    public static final DeferredItem<Item> BOVID_SHARD = ITEMS.register(
+            "bovid_shard",
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );
 
-    public static final DeferredItem<Item> REFINED_BOVINE_SHARD = ITEMS.register(
-            "refined_bovine_shard",
+    public static final DeferredItem<Item> REFINED_BOVID_SHARD = ITEMS.register(
+            "refined_bovid_shard",
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );
 
     public static final DeferredItem<Item> ASH = ITEMS.register(
             "ash",
+            registryName -> new BoneMealItem(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
+    );
+
+    public static final DeferredItem<Item> RAW_HIDE = ITEMS.register(
+            "raw_hide",
             registryName -> new BoneMealItem(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );

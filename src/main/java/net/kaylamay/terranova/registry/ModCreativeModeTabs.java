@@ -27,8 +27,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WOODEN_HAFT);
                         output.accept(ModItems.FLINT_HATCHET);
                         output.accept(ModItems.BONE_HATCHET);
-                        output.accept(ModItems.BOVINE_SHARD);
-                        output.accept(ModItems.REFINED_BOVINE_SHARD);
+                        output.accept(ModItems.BOVID_SHARD);
+                        output.accept(ModItems.REFINED_BOVID_SHARD);
                         output.accept(ModItems.FIRESTARTER);
                         output.accept(ModItems.WATERSKIN_EMPTY);
                         output.accept(ModItems.WATERSKIN_FILLED);

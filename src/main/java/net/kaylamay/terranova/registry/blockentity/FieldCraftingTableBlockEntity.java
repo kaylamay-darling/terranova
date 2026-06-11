@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class FieldCraftingTableBlockEntity extends BlockEntity {
-    private int usesRemaining = 10;
+    private int usesRemaining = 8;
 
     public FieldCraftingTableBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.FIELD_CRAFTING_TABLE_BLOCK_ENTITY.get(), pos, state);
@@ -21,7 +21,7 @@ public class FieldCraftingTableBlockEntity extends BlockEntity {
         this.setChanged();
 
         if (this.usesRemaining <= 0) {
-            level.destroyBlock(pos, true);
+            level.destroyBlock(pos, false);
         }
     }
 

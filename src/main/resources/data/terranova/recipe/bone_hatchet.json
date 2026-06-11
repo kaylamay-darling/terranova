@@ -5,7 +5,7 @@
     "#": "minecraft:stick",
     "W": "terranova:wooden_haft",
     "L": "minecraft:leather",
-    "r": "terranova:refined_bovine_shard"
+    "r": "terranova:refined_bovid_shard"
   },
   "pattern": [
     "rLr",

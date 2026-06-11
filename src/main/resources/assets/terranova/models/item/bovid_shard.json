@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "terranova:item/bovine_shard"
+    "layer0": "terranova:item/bovid_shard"
   }
 }

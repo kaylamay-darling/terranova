@@ -6,15 +6,9 @@
     "BBB"
   ],
   "key": {
-    "S": {
-      "item": "minecraft:stone"
-    },
-    "B": {
-      "item": "minecraft:brick"
-    },
-    "k": {
-      "item": "terranova:kiln"
-    }
+    "S": "minecraft:stone",
+    "B": "minecraft:brick",
+    "k": "terranova:kiln"
   },
   "result": {
     "id": "minecraft:furnace",

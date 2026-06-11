@@ -6,12 +6,8 @@
     "MMM"
   ],
   "key": {
-    "C": {
-      "item": "minecraft:cobblestone"
-    },
-    "M": {
-      "item": "minecraft:mud"
-    }
+    "C": "minecraft:cobblestone",
+    "M": "minecraft:mud"
   },
   "result": {
     "id": "terranova:kiln",
