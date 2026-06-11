@@ -32,6 +32,18 @@ public class ModItems {
                     .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );
 
+    public static final DeferredItem<Item> STEEL_ALLOY_INGOT = ITEMS.register(
+            "steel_alloy_ingot",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
+    );
+
+    public static final DeferredItem<Item> STEEL_WIRE = ITEMS.register(
+            "steel_wire",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
+    );
+
     public static final DeferredItem<Item> BARK = ITEMS.register(
             "bark",
             registryName -> new Item(new Item.Properties()

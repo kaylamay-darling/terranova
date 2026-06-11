@@ -27,4 +27,12 @@ public class ModItemTags {
     public static final TagKey<Item> RED_MUSHROOMS = TagKey.create(
             Registries.ITEM, Identifier.fromNamespaceAndPath(TerraNova.MODID, "red_mushrooms")
     );
+
+    public static final TagKey<Item> HEARTWOOD = TagKey.create(
+            Registries.ITEM, Identifier.fromNamespaceAndPath(TerraNova.MODID, "heartwood")
+    );
+
+    public static final TagKey<Item> HOLLOW_LOGS = TagKey.create(
+            Registries.ITEM, Identifier.fromNamespaceAndPath(TerraNova.MODID, "hollow_logs")
+    );
 }

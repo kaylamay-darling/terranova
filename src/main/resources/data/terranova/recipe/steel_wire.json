@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": "terranova:steel_alloy_ingot"
+  },
+  "result": {
+    "id": "terranova:steel_wire",
+    "count": 2
+  }
+}

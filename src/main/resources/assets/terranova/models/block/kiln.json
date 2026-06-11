@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "top": "terranova:block/kiln_top",
+    "bottom": "terranova:block/kiln_bottom",
+    "front": "terranova:block/kiln_front",
+    "side": "terranova:block/kiln_side"
+  }
+}

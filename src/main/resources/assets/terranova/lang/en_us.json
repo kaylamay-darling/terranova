@@ -1,6 +1,8 @@
 {
   "item.terranova.raw_zinc": "Raw Zinc",
   "item.terranova.zinc_ingot": "Zinc Ingot",
+  "item.terranova.steel_alloy_ingot": "Steel Alloy Ingot",
+  "item.terranova.steel_wire": "Steel Wire",
   "item.terranova.bark": "Bark",
   "item.terranova.flint_hatchet": "Flint Hatchet",
   "item.terranova.bone_hatchet": "Bone Hatchet",
@@ -48,7 +50,10 @@
 
   "block.terranova.field_crafting_table": "Field Crafting Table",
   "block.terranova.ash_layer": "Ash Layer",
+  "block.terranova.kiln": "Kiln",
 
   "creativetab.terranova.mod_items": "Items",
-  "creativetab.terranova.mod_blocks": "Blocks"
+  "creativetab.terranova.mod_blocks": "Blocks",
+
+  "container.terranova.kiln": "Kiln"
 }

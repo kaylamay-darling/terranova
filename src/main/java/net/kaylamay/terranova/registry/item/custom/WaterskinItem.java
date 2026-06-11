@@ -46,7 +46,6 @@ public class WaterskinItem extends Item {
         BlockPos pos = blockHit.getBlockPos();
 
         if (!filled) {
-            // Empty waterskin — fill from water source
             if (level.getFluidState(pos).getType() == Fluids.WATER
                     && level.getFluidState(pos).isSource()) {
 
@@ -71,7 +70,6 @@ public class WaterskinItem extends Item {
             }
 
         } else {
-            // Filled waterskin — only act on campfires or valid pour targets
             BlockState state = level.getBlockState(pos);
             BlockPos place = pos.relative(blockHit.getDirection());
             boolean canPour = (state.is(BlockTags.CAMPFIRES) && state.getValue(CampfireBlock.LIT))
@@ -111,6 +109,13 @@ public class WaterskinItem extends Item {
                             Blocks.WATER.defaultBlockState()
                                     .setValue(LiquidBlock.LEVEL, 7),
                             2);
+
+                    BlockPos below = place.below();
+                    BlockState belowState = level.getBlockState(below);
+                    if (belowState.is(Blocks.GRASS_BLOCK) || belowState.is(Blocks.DIRT)
+                            || belowState.is(Blocks.COARSE_DIRT) || belowState.is(Blocks.ROOTED_DIRT)) {
+                        level.setBlock(below, Blocks.MUD.defaultBlockState(), 3);
+                    }
                 }
             }
 

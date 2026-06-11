@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SkS",
+    "BBB"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stone"
+    },
+    "B": {
+      "item": "minecraft:brick"
+    },
+    "k": {
+      "item": "terranova:kiln"
+    }
+  },
+  "result": {
+    "id": "minecraft:furnace",
+    "count": 1
+  }
+}

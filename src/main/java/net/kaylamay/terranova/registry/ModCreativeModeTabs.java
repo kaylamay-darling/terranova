@@ -35,6 +35,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ASH);
                         output.accept(ModItems.RAW_ZINC);
                         output.accept(ModItems.ZINC_INGOT);
+                        output.accept(ModItems.STEEL_ALLOY_INGOT);
+                        output.accept(ModItems.STEEL_WIRE);
                     })
                     .build());
 
@@ -45,6 +47,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.terranova.mod_blocks"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModBlocks.FIELD_CRAFTING_TABLE);
+                        output.accept(ModBlocks.KILN);
                         output.accept(ModBlocks.ASH_LAYER);
                         output.accept(ModBlocks.OAK_HOLLOW_LOG);
                         output.accept(ModBlocks.SPRUCE_HOLLOW_LOG);
