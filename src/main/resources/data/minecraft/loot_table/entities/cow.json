@@ -26,7 +26,7 @@
               "function": "minecraft:enchanted_count_increase"
             }
           ],
-          "name": "minecraft:raw_hide"
+          "name": "terranova:raw_hide"
         }
       ],
       "rolls": 1.0

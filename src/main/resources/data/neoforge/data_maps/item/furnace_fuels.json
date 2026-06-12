@@ -1,8 +1,8 @@
 {
   "values": {
-    "terranova:grass_fiber": { "burn_time": 50 },
+    "terranova:grass_fiber": { "burn_time": 100 },
     "terranova:wooden_haft": { "burn_time": 150 },
-    "terranova:bark": { "burn_time": 50 },
+    "terranova:bark": { "burn_time": 100 },
     "#terranova:hollow_logs": { "burn_time": 300 },
     "#terranova:heartwood": { "burn_time": 300 },
     "minecraft:charcoal": {

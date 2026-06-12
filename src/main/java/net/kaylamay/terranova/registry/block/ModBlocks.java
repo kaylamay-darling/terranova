@@ -87,6 +87,7 @@ public class ModBlocks {
             )
     );
 
+
     public static final DeferredBlock<Block> EXPOSED_ZINC = registerBlock(
             "exposed_zinc",
             registryName -> new ZincBlock(
@@ -123,6 +124,7 @@ public class ModBlocks {
             )
     );
 
+
     public static final DeferredBlock<Block> OXIDIZED_ZINC = registerBlock(
             "oxidized_zinc",
             registryName -> new ZincBlock(
@@ -140,6 +142,7 @@ public class ModBlocks {
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             )
     );
+
 
     public static final DeferredBlock<Block> OAK_HEARTWOOD = registerBlock(
             "oak_heartwood",
