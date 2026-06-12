@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "terranova:steel_wire"
+    },
+    "title": "Wired",
+    "description": "Craft steel wire to further your tool progression.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "terranova:craft_steel_alloy_ingot",
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "terranova:steel_wire"
+          }
+        ]
+      }
+    }
+  }
+}

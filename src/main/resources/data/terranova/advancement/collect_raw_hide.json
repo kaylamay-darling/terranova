@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "terranova:raw_hide"
+    },
+    "title": "Raw Hide and Seek",
+    "description": "Gather hide by killing livestock.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "terranova:craft_campfire",
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "terranova:raw_hide"
+          }
+        ]
+      }
+    }
+  }
+}

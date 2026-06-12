@@ -3,9 +3,12 @@ package net.kaylamay.terranova.registry.block;
 import com.ibm.icu.impl.CacheValue;
 import com.mojang.serialization.MapCodec;
 import net.kaylamay.terranova.TerraNova;
+import net.kaylamay.terranova.registry.ModParticles;
 import net.kaylamay.terranova.registry.block.custom.*;
 import net.kaylamay.terranova.registry.item.ModItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
@@ -18,6 +21,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.FurnaceMenu;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -267,7 +271,7 @@ public class ModBlocks {
                             .noOcclusion().noCollision().randomTicks()
             ),
             props -> props.food(new FoodProperties.Builder()
-                    .nutrition(1)
+                    .nutrition(2)
                     .saturationModifier(0.4f)
                     .build()
             )
@@ -281,7 +285,7 @@ public class ModBlocks {
                             .noOcclusion().noCollision().randomTicks()
             ),
             props -> props.food(new FoodProperties.Builder()
-                    .nutrition(1)
+                    .nutrition(2)
                     .saturationModifier(0.4f)
                     .build()
             )
@@ -316,6 +320,8 @@ public class ModBlocks {
             }
     );
 
+
+
     public static final DeferredBlock<Block> KILN = registerBlock(
             "kiln",
             registryName -> new KilnBlock(
@@ -325,6 +331,34 @@ public class ModBlocks {
                             .sound(SoundType.STONE)
                             .requiresCorrectToolForDrops()
             )
+    );
+
+    public static final DeferredBlock<Block> RESIN_WALL_TORCH = registerBlock(
+            "resin_wall_torch",
+            registryName -> new ResinWallTorchBlock(
+                    ModParticles.RESIN_FLAME.get(),
+                    BlockBehaviour.Properties.of()
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .noCollision()
+                            .instabreak()
+                            .lightLevel(state -> 14)
+                            .sound(SoundType.WOOD)
+            )
+    );
+
+    public static final DeferredBlock<Block> RESIN_TORCH = registerStandingAndWallBlock(
+            "resin_torch",
+            registryName -> new ResinTorchBlock(
+                    ModParticles.RESIN_FLAME.get(),
+                    BlockBehaviour.Properties.of()
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .noCollision()
+                            .instabreak()
+                            .lightLevel(state -> 14)
+                            .sound(SoundType.WOOD)
+            ),
+            () -> RESIN_WALL_TORCH.get(),
+            Direction.DOWN
     );
 
     private static <T extends Block> void registerBlockItem(String name, Supplier<T> block, Item.Properties properties) {
@@ -349,6 +383,22 @@ public class ModBlocks {
             return new BlockItem(
                     toReturn.get(),
                     itemProperties.apply(new Item.Properties().setId(key))
+            );
+        });
+        return toReturn;
+    }
+
+
+    private static <T extends Block> DeferredBlock<Block> registerStandingAndWallBlock(String name, Function<Identifier, ? extends T> block, Supplier<Block> wallBlock, Direction attachmentDirection) {
+        DeferredBlock<Block> toReturn = BLOCKS.register(name, block);
+        ModItems.ITEMS.register(name, () -> {
+            Identifier id = toReturn.getId();
+            ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(id.getNamespace(), id.getPath()));
+            return new StandingAndWallBlockItem(
+                    toReturn.get(),
+                    wallBlock.get(),
+                    attachmentDirection,
+                    new Item.Properties().setId(key)
             );
         });
         return toReturn;

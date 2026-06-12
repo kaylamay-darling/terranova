@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "id": "terranova:ash"
+    },
+    "title": "Not Ash Trevino",
+    "description": "Gather ash by singing 'round the campfire.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "terranova:craft_campfire",
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "terranova:ash"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "terranova:leather",
+      "terranova:refined_bovid_shard"
+    ]
+  }
+}

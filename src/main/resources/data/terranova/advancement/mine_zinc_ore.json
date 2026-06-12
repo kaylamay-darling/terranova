@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "terranova:raw_zinc"
+    },
+    "title": "Zincy",
+    "description": "Mine zinc ore.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "terranova:upgrade_furnace",
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "terranova:raw_zinc"
+          }
+        ]
+      }
+    }
+  }
+}

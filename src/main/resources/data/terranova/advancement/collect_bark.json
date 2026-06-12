@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "id": "terranova:bark"
+    },
+    "title": "Bark Like You Want It",
+    "description": "Harvest bark by stripping a log with a hatchet.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "terranova:craft_flint_hatchet",
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "terranova:bark"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "minecraft:campfire",
+      "terranova:firestarter"
+    ]
+  }
+}

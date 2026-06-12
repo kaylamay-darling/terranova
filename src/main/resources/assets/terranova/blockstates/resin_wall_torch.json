@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "terranova:block/resin_wall_torch"
+    },
+    "facing=north": {
+      "model": "terranova:block/resin_wall_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "terranova:block/resin_wall_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "terranova:block/resin_wall_torch",
+      "y": 180
+    }
+  }
+}

@@ -6,6 +6,8 @@ import net.kaylamay.terranova.registry.*;
 import net.kaylamay.terranova.registry.block.ModBlocks;
 import net.kaylamay.terranova.registry.item.ModItems;
 import net.kaylamay.terranova.worldgen.feature.ModFeatures;
+import net.minecraft.client.particle.FlameParticle;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -36,6 +38,7 @@ public class TerraNova {
         ModDataComponents.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModLootModifiers.register(modEventBus);
+        ModParticles.register(modEventBus);
 
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
@@ -46,6 +49,7 @@ public class TerraNova {
         ModFeatures.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(this::onClientSetup);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -58,5 +62,9 @@ public class TerraNova {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+    }
+
+    private void onClientSetup(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(ModParticles.RESIN_FLAME.get(), FlameParticle.Provider::new);
     }
 }

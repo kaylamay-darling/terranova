@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:resin_clump",
+    "minecraft:torch",
+    "terranova:raw_zinc"
+  ],
+  "result": {
+    "id": "terranova:resin_torch"
+  }
+}

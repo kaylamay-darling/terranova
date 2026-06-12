@@ -25,14 +25,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GRASS_FIBER);
                         output.accept(ModItems.BARK);
                         output.accept(ModItems.WOODEN_HAFT);
-                        output.accept(ModItems.FLINT_HATCHET);
-                        output.accept(ModItems.BONE_HATCHET);
                         output.accept(ModItems.BOVID_SHARD);
                         output.accept(ModItems.REFINED_BOVID_SHARD);
                         output.accept(ModItems.FIRESTARTER);
+                        output.accept(ModItems.ASH);
                         output.accept(ModItems.WATERSKIN_EMPTY);
                         output.accept(ModItems.WATERSKIN_FILLED);
-                        output.accept(ModItems.ASH);
+                        output.accept(ModItems.FLINT_HATCHET);
+                        output.accept(ModItems.BONE_HATCHET);
                         output.accept(ModItems.RAW_ZINC);
                         output.accept(ModItems.ZINC_INGOT);
                         output.accept(ModItems.STEEL_ALLOY_INGOT);
@@ -46,9 +46,6 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(Identifier.fromNamespaceAndPath(TerraNova.MODID, "mod_items"))
                     .title(Component.translatable("creativetab.terranova.mod_blocks"))
                     .displayItems((parameters, output) -> {
-                        output.accept(ModBlocks.FIELD_CRAFTING_TABLE);
-                        output.accept(ModBlocks.KILN);
-                        output.accept(ModBlocks.ASH_LAYER);
                         output.accept(ModBlocks.OAK_HOLLOW_LOG);
                         output.accept(ModBlocks.SPRUCE_HOLLOW_LOG);
                         output.accept(ModBlocks.BIRCH_HOLLOW_LOG);
@@ -67,6 +64,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MANGROVE_HEARTWOOD);
                         output.accept(ModBlocks.CHERRY_HEARTWOOD);
                         output.accept(ModBlocks.PALE_OAK_HEARTWOOD);
+                        output.accept(ModBlocks.FIELD_CRAFTING_TABLE);
+                        output.accept(ModBlocks.KILN);
+                        output.accept(ModBlocks.ASH_LAYER);
                         output.accept(ModBlocks.BROWN_CREEPING_MUSHROOM);
                         output.accept(ModBlocks.RED_CREEPING_MUSHROOM);
                         output.accept(ModBlocks.ZINC_ORE);
@@ -76,6 +76,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.EXPOSED_ZINC);
                         output.accept(ModBlocks.WEATHERED_ZINC);
                         output.accept(ModBlocks.OXIDIZED_ZINC);
+                        output.accept(ModBlocks.RESIN_TORCH);
                     })
                     .build());
 

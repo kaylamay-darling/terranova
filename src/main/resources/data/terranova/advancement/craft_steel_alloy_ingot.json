@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "id": "terranova:steel_alloy_ingot"
+    },
+    "title": "What a Steel",
+    "description": "Craft steel alloy ingots with zinc and iron.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "terranova:smelt_zinc",
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "terranova:steel_alloy_ingot"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "terranova:steel_wire"
+    ]
+  }
+}

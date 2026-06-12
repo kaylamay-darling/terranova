@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "terranova:bovid_shard"
+    },
+    "title": "Bovid-19",
+    "description": "Gather a bovid shard by killing livestock.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "terranova:craft_campfire",
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "terranova:bovid_shard"
+          }
+        ]
+      }
+    }
+  }
+}

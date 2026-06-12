@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "terranova:field_crafting_table"
+    },
+    "title": "Playing the Outfield",
+    "description": "Craft a field crafting table.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "terranova:root",
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "terranova:field_crafting_table"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "terranova:flint_hatchet"
+    },
+    "title": "Flint and Hatchet",
+    "description": "Craft a flint hatchet.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "terranova:craft_field_crafting_table",
+  "criteria": {
+    "get_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "terranova:flint_hatchet"
+          }
+        ]
+      }
+    }
+  }
+}
