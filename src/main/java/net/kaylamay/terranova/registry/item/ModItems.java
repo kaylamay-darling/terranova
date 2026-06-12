@@ -4,13 +4,16 @@ import net.kaylamay.terranova.TerraNova;
 import net.kaylamay.terranova.registry.item.custom.BoneHatchetItem;
 import net.kaylamay.terranova.registry.item.custom.FlintHatchetItem;
 import net.kaylamay.terranova.registry.item.custom.WaterskinItem;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.InstrumentComponent;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -162,6 +165,25 @@ public class ModItems {
             "zinc_nugget",
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName)))
+    );
+
+    public static final DeferredItem<Item> ROASTED_CREEPING_MUSHROOM = ITEMS.register(
+            "roasted_creeping_mushroom",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(5.4f)
+                            .build()))
+    );
+
+    public static final DeferredItem<InstrumentItem> CRUDE_HORN = ITEMS.register(
+            "crude_horn",
+            registryName -> new InstrumentItem(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+                    .stacksTo(1)
+                    .delayedComponent(DataComponents.INSTRUMENT, context ->
+                            new InstrumentComponent(context.getOrThrow(Instruments.PONDER_GOAT_HORN))))
     );
 
     public static void register(IEventBus eventBus) {

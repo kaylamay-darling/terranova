@@ -307,7 +307,7 @@ public class ModBlocks {
             ),
             props -> props.food(new FoodProperties.Builder()
                     .nutrition(2)
-                    .saturationModifier(0.4f)
+                    .saturationModifier(3.6f)
                     .build()
             )
     );
@@ -321,7 +321,7 @@ public class ModBlocks {
             ),
             props -> props.food(new FoodProperties.Builder()
                     .nutrition(2)
-                    .saturationModifier(0.4f)
+                    .saturationModifier(3.6f)
                     .build()
             )
     );
@@ -360,11 +360,8 @@ public class ModBlocks {
     public static final DeferredBlock<Block> KILN = registerBlock(
             "kiln",
             registryName -> new KilnBlock(
-                    BlockBehaviour.Properties.of()
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.FURNACE)
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
-                            .strength(3.5f)
-                            .sound(SoundType.STONE)
-                            .requiresCorrectToolForDrops()
             )
     );
 
@@ -422,7 +419,6 @@ public class ModBlocks {
         });
         return toReturn;
     }
-
 
     private static <T extends Block> DeferredBlock<Block> registerStandingAndWallBlock(
             String name,

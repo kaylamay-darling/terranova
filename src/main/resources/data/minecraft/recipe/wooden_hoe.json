@@ -8,8 +8,8 @@
   },
   "pattern": [
     "XX",
-    " G ",
-    " # "
+    " G",
+    " #"
   ],
   "result": {
     "id": "minecraft:wooden_hoe"

@@ -22,11 +22,13 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModItems.GRASS_FIBER.get()))
                     .title(Component.translatable("creativetab.terranova.mod_items"))
                     .displayItems((parameters, output) -> {
+                        output.accept(ModItems.ROASTED_CREEPING_MUSHROOM);
                         output.accept(ModItems.GRASS_FIBER);
                         output.accept(ModItems.BARK);
                         output.accept(ModItems.WOODEN_HAFT);
                         output.accept(ModItems.BOVID_SHARD);
                         output.accept(ModItems.REFINED_BOVID_SHARD);
+                        output.accept(ModItems.CRUDE_HORN);
                         output.accept(ModItems.FIRESTARTER);
                         output.accept(ModItems.ASH);
                         output.accept(ModItems.WATERSKIN_EMPTY);

@@ -1,12 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    { "tag": "terranova:red_mushrooms" },
-    { "tag": "terranova:brown_mushrooms" },
-    { "item": "minecraft:bowl" }
+    "minecraft:bowl",
+    "#terranova:brown_mushrooms",
+    "#terranova:red_mushrooms"
   ],
   "result": {
-    "id": "minecraft:mushroom_stew",
-    "count": 1
+    "id": "minecraft:mushroom_stew"
   }
 }

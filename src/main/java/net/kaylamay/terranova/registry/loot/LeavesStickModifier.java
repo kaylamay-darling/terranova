@@ -3,6 +3,7 @@ package net.kaylamay.terranova.registry.loot;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -25,11 +26,14 @@ public class LeavesStickModifier extends LootModifier {
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         var blockState = context.getOptionalParameter(LootContextParams.BLOCK_STATE);
-        if (blockState != null && blockState.getBlock() instanceof LeavesBlock) {
-            if (context.getRandom().nextFloat() < 0.25f) {
-                generatedLoot.add(new ItemStack(Items.STICK, 1));
-            }
+        var attacker = context.getOptionalParameter(LootContextParams.ATTACKING_ENTITY);
+
+        if (blockState != null && blockState.getBlock() instanceof LeavesBlock
+                && attacker instanceof Player
+                && context.getRandom().nextFloat() < 0.25f) {
+            generatedLoot.add(new ItemStack(Items.STICK, 1));
         }
+
         return generatedLoot;
     }
 

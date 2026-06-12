@@ -1,4 +1,4 @@
-package net.kaylamay.terranova.client;
+package net.kaylamay.terranova.event;
 
 import net.kaylamay.terranova.TerraNova;
 import net.kaylamay.terranova.registry.ModParticles;

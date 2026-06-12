@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": "terranova:brown_creeping_mushroom",
+  "result": {
+    "id": "terranova:roasted_creeping_mushroom"
+  }
+}
