@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 
@@ -45,15 +46,13 @@ public class PlayerEvents {
     }
 
     @SubscribeEvent
-    public static void fistDamageEvent(AttackEntityEvent event) {
-        Player player = event.getEntity();
-        Entity attackedEntity = event.getTarget();
-        ItemStack itemStack = player.getMainHandItem();
-
-        if (itemStack.is(UNSUPPRESSED_ATTACK) || !(attackedEntity instanceof LivingEntity)) {
-            return;
+    public static void onLivingDamagePre(LivingDamageEvent.Pre event) {
+        if (event.getSource().getEntity() instanceof Player player) {
+            ItemStack weapon = player.getMainHandItem();
+            if (!weapon.is(UNSUPPRESSED_ATTACK)) {
+                float currentDamage = event.getNewDamage();
+                event.setNewDamage(currentDamage * 0.35f);
+            }
         }
-        event.setCanceled(true);
-        player.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(0.35);
     }
 }
