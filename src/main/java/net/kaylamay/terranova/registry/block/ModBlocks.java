@@ -392,7 +392,7 @@ public class ModBlocks {
                             .lightLevel(state -> 14)
                             .sound(SoundType.WOOD)
             ),
-            () -> RESIN_WALL_TORCH.get(),
+            RESIN_WALL_TORCH,
             Direction.DOWN
     );
 
@@ -424,7 +424,12 @@ public class ModBlocks {
     }
 
 
-    private static <T extends Block> DeferredBlock<Block> registerStandingAndWallBlock(String name, Function<Identifier, ? extends T> block, Supplier<Block> wallBlock, Direction attachmentDirection) {
+    private static <T extends Block> DeferredBlock<Block> registerStandingAndWallBlock(
+            String name,
+            Function<Identifier, ? extends T> block,
+            Supplier<? extends Block> wallBlock,
+            Direction attachmentDirection) {
+
         DeferredBlock<Block> toReturn = BLOCKS.register(name, block);
         ModItems.ITEMS.register(name, () -> {
             Identifier id = toReturn.getId();

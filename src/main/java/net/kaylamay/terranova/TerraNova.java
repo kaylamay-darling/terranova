@@ -30,10 +30,6 @@ public class TerraNova {
     public TerraNova(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
 
-        NeoForge.EVENT_BUS.register(this);
-        NeoForge.EVENT_BUS.register(PlayerEvents.class);
-        NeoForge.EVENT_BUS.register(BlockEvents.class);
-
         ModCreativeModeTabs.register(modEventBus);
         ModDataComponents.register(modEventBus);
         ModBlockEntities.register(modEventBus);
@@ -49,7 +45,6 @@ public class TerraNova {
         ModFeatures.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
-        modEventBus.addListener(this::onClientSetup);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -62,9 +57,5 @@ public class TerraNova {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-    }
-
-    private void onClientSetup(RegisterParticleProvidersEvent event) {
-        event.registerSpriteSet(ModParticles.RESIN_FLAME.get(), FlameParticle.Provider::new);
     }
 }

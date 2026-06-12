@@ -19,6 +19,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 
@@ -29,6 +30,7 @@ import static net.kaylamay.terranova.util.ModBlockTags.SOFT_MATERIALS;
 import static net.kaylamay.terranova.util.ModItemTags.UNSUPPRESSED_ATTACK;
 import static net.kaylamay.terranova.util.ModItemTags.UNSUPPRESSED_MINE;
 
+@EventBusSubscriber(modid = TerraNova.MODID)
 public class PlayerEvents {
     @SubscribeEvent
     public static void fistBreakEvent(PlayerEvent.BreakSpeed event) {

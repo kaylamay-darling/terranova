@@ -17,23 +17,33 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
 import javax.annotation.Nullable;
+import java.util.HashMap;
 import java.util.Map;
 
+@EventBusSubscriber(modid = TerraNova.MODID)
 public class BlockEvents {
-    private static final Map<Block, Block> LOG_TO_HEARTWOOD = Map.of(
-            Blocks.STRIPPED_OAK_LOG, ModBlocks.OAK_HEARTWOOD.get(),
-            Blocks.STRIPPED_BIRCH_LOG, ModBlocks.BIRCH_HEARTWOOD.get(),
-            Blocks.STRIPPED_SPRUCE_LOG, ModBlocks.SPRUCE_HEARTWOOD.get(),
-            Blocks.STRIPPED_ACACIA_LOG, ModBlocks.ACACIA_HEARTWOOD.get(),
-            Blocks.STRIPPED_DARK_OAK_LOG, ModBlocks.DARK_OAK_HEARTWOOD.get(),
-            Blocks.STRIPPED_JUNGLE_LOG, ModBlocks.JUNGLE_HEARTWOOD.get(),
-            Blocks.STRIPPED_MANGROVE_LOG, ModBlocks.MANGROVE_HEARTWOOD.get(),
-            Blocks.STRIPPED_CHERRY_LOG, ModBlocks.CHERRY_HEARTWOOD.get(),
-            Blocks.STRIPPED_PALE_OAK_LOG, ModBlocks.PALE_OAK_HEARTWOOD.get()
-    );
+    private static Map<Block, Block> LOG_TO_HEARTWOOD = null;
+
+    private static Map<Block, Block> getLogToHeartwoodMap() {
+        if (LOG_TO_HEARTWOOD == null) {
+            Map<Block, Block> map = new HashMap<>();
+            map.put(Blocks.STRIPPED_OAK_LOG, ModBlocks.OAK_HEARTWOOD.get());
+            map.put(Blocks.STRIPPED_BIRCH_LOG, ModBlocks.BIRCH_HEARTWOOD.get());
+            map.put(Blocks.STRIPPED_SPRUCE_LOG, ModBlocks.SPRUCE_HEARTWOOD.get());
+            map.put(Blocks.STRIPPED_ACACIA_LOG, ModBlocks.ACACIA_HEARTWOOD.get());
+            map.put(Blocks.STRIPPED_DARK_OAK_LOG, ModBlocks.DARK_OAK_HEARTWOOD.get());
+            map.put(Blocks.STRIPPED_JUNGLE_LOG, ModBlocks.JUNGLE_HEARTWOOD.get());
+            map.put(Blocks.STRIPPED_MANGROVE_LOG, ModBlocks.MANGROVE_HEARTWOOD.get());
+            map.put(Blocks.STRIPPED_CHERRY_LOG, ModBlocks.CHERRY_HEARTWOOD.get());
+            map.put(Blocks.STRIPPED_PALE_OAK_LOG, ModBlocks.PALE_OAK_HEARTWOOD.get());
+            LOG_TO_HEARTWOOD = Map.copyOf(map);
+        }
+        return LOG_TO_HEARTWOOD;
+    }
 
     @SubscribeEvent
     public static void breakLogEvent(BlockEvent.BreakEvent event) {
