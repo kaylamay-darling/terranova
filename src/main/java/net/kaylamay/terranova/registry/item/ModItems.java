@@ -158,6 +158,12 @@ public class ModItems {
                     .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );
 
+    public static final DeferredItem<Item> ZINC_NUGGET = ITEMS.register(
+            "zinc_nugget",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

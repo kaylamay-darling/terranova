@@ -16,14 +16,21 @@
   "item.terranova.ash": "Ash",
   "item.terranova.raw_hide": "Raw Hide",
   "item.terranova.resin_torch": "Resin Torch",
+  "item.terranova.zinc_nugget": "Zinc Nugget",
 
   "block.terranova.zinc_ore": "Zinc Ore",
   "block.terranova.deepslate_zinc_ore": "Deepslate Zinc Ore",
   "block.terranova.raw_zinc_block": "Block of Raw Zinc",
+
   "block.terranova.zinc_block": "Block of Zinc",
   "block.terranova.exposed_zinc": "Exposed Zinc",
   "block.terranova.weathered_zinc": "Weathered Zinc",
   "block.terranova.oxidized_zinc": "Oxidized Zinc",
+
+  "block.terranova.waxed_zinc_block": "Waxed Block of Zinc",
+  "block.terranova.waxed_exposed_zinc": "Waxed Exposed Zinc",
+  "block.terranova.waxed_weathered_zinc": "Waxed Weathered Zinc",
+  "block.terranova.waxed_oxidized_zinc": "Waxed Oxidized Zinc",
 
   "block.terranova.oak_heartwood": "Oak Heartwood",
   "block.terranova.spruce_heartwood": "Spruce Heartwood",

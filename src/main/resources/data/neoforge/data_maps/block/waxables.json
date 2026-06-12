@@ -1,0 +1,16 @@
+{
+  "values": {
+    "terranova:zinc_block": {
+      "waxed": "terranova:waxed_zinc_block"
+    },
+    "terranova:exposed_zinc": {
+      "waxed": "terranova:waxed_exposed_zinc"
+    },
+    "terranova:weathered_zinc": {
+      "waxed": "terranova:waxed_weathered_zinc"
+    },
+    "terranova:oxidized_zinc": {
+      "waxed": "terranova:waxed_oxidized_zinc"
+    }
+  }
+}

@@ -34,6 +34,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FLINT_HATCHET);
                         output.accept(ModItems.BONE_HATCHET);
                         output.accept(ModItems.RAW_ZINC);
+                        output.accept(ModItems.ZINC_NUGGET);
                         output.accept(ModItems.ZINC_INGOT);
                         output.accept(ModItems.STEEL_ALLOY_INGOT);
                         output.accept(ModItems.STEEL_WIRE);
@@ -76,6 +77,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.EXPOSED_ZINC);
                         output.accept(ModBlocks.WEATHERED_ZINC);
                         output.accept(ModBlocks.OXIDIZED_ZINC);
+                        output.accept(ModBlocks.WAXED_ZINC_BLOCK);
+                        output.accept(ModBlocks.WAXED_EXPOSED_ZINC);
+                        output.accept(ModBlocks.WAXED_WEATHERED_ZINC);
+                        output.accept(ModBlocks.WAXED_OXIDIZED_ZINC);
                         output.accept(ModBlocks.RESIN_TORCH);
                     })
                     .build());

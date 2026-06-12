@@ -4,7 +4,7 @@
   "ingredients": [
     "minecraft:resin_clump",
     "minecraft:torch",
-    "terranova:raw_zinc"
+    "terranova:zinc_nugget"
   ],
   "result": {
     "id": "terranova:resin_torch"

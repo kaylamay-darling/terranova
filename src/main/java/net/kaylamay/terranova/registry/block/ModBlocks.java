@@ -79,6 +79,14 @@ public class ModBlocks {
             )
     );
 
+    public static final DeferredBlock<Block> WAXED_ZINC_BLOCK = registerBlock(
+            "waxed_zinc_block",
+            registryName -> new Block(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            )
+    );
+
     public static final DeferredBlock<Block> EXPOSED_ZINC = registerBlock(
             "exposed_zinc",
             registryName -> new ZincBlock(
@@ -86,6 +94,14 @@ public class ModBlocks {
                     BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
                             .randomTicks()
+            )
+    );
+
+    public static final DeferredBlock<Block> WAXED_EXPOSED_ZINC = registerBlock(
+            "waxed_exposed_zinc",
+            registryName -> new Block(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
             )
     );
 
@@ -99,6 +115,14 @@ public class ModBlocks {
             )
     );
 
+    public static final DeferredBlock<Block> WAXED_WEATHERED_ZINC = registerBlock(
+            "waxed_weathered_zinc",
+            registryName -> new Block(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            )
+    );
+
     public static final DeferredBlock<Block> OXIDIZED_ZINC = registerBlock(
             "oxidized_zinc",
             registryName -> new ZincBlock(
@@ -106,6 +130,14 @@ public class ModBlocks {
                     BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
                             .randomTicks()
+            )
+    );
+
+    public static final DeferredBlock<Block> WAXED_OXIDIZED_ZINC = registerBlock(
+            "waxed_oxidized_zinc",
+            registryName -> new Block(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
             )
     );
 
