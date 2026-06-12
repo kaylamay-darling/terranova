@@ -4,11 +4,13 @@ license="All Rights Reserved"
 modId="terranova"
 version="1.0.0"
 displayName="Terra Nova"
+logoFile="icon.png"
+displayURL="https://github.com/kaylamay-darling/terranova"
 
-authors="Kayla May"
+authors="Kayla May (Code / Art), Kaya (Art)"
 
 description='''
-A fusion of Vanilla enhancements with magic.
+Enhances the Vanilla progression system, while adding world-building features. More to come...
 '''
 
 [[mixins]]
@@ -17,13 +19,13 @@ config = "terranova.mixins.json"
 [[dependencies.terranova]]
 modId="neoforge"
 type="required"
-versionRange="[21,)"
+versionRange="[26.1,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.terranova]]
 modId="minecraft"
 type="required"
-versionRange="[1.21,)"
+versionRange="[26.1.2,)"
 ordering="NONE"
 side="BOTH"
