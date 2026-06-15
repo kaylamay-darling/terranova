@@ -1,9 +1,8 @@
 package net.kaylamay.terranova.registry.item;
 
 import net.kaylamay.terranova.TerraNova;
-import net.kaylamay.terranova.registry.item.custom.BoneHatchetItem;
-import net.kaylamay.terranova.registry.item.custom.FlintHatchetItem;
-import net.kaylamay.terranova.registry.item.custom.WaterskinItem;
+import net.kaylamay.terranova.registry.block.ModBlocks;
+import net.kaylamay.terranova.registry.item.custom.*;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
@@ -15,7 +14,9 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.InstrumentComponent;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.component.UseCooldown;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -177,13 +178,27 @@ public class ModItems {
                             .build()))
     );
 
-    public static final DeferredItem<InstrumentItem> CRUDE_HORN = ITEMS.register(
+    public static final DeferredItem<CrudeHornItem> CRUDE_HORN = ITEMS.register(
             "crude_horn",
-            registryName -> new InstrumentItem(new Item.Properties()
+            registryName -> new CrudeHornItem(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
                     .stacksTo(1)
                     .delayedComponent(DataComponents.INSTRUMENT, context ->
-                            new InstrumentComponent(context.getOrThrow(Instruments.PONDER_GOAT_HORN))))
+                            new InstrumentComponent(context.getOrThrow(Instruments.PONDER_GOAT_HORN))
+                    )
+            )
+    );
+
+    public static final DeferredItem<Item> SILK_THREAD = ITEMS.register(
+            "silk_thread",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
+    );
+
+    public static final DeferredItem<Item> GARNET = ITEMS.register(
+            "garnet",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );
 
     public static void register(IEventBus eventBus) {

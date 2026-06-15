@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "terranova:block/glowworm_jar"
+    },
+    "hanging=true": {
+      "model": "terranova:block/glowworm_jar_hanging"
+    }
+  }
+}

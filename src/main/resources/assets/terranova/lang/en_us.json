@@ -19,6 +19,7 @@
   "item.terranova.zinc_nugget": "Zinc Nugget",
   "item.terranova.roasted_creeping_mushroom": "Roasted Creeping Mushroom",
   "item.terranova.crude_horn": "Crude Horn",
+  "item.terranova.silk_thread": "Silk Thread",
 
   "block.terranova.zinc_ore": "Zinc Ore",
   "block.terranova.deepslate_zinc_ore": "Deepslate Zinc Ore",
@@ -62,6 +63,13 @@
   "block.terranova.field_crafting_table": "Field Crafting Table",
   "block.terranova.ash_layer": "Ash Layer",
   "block.terranova.kiln": "Kiln",
+  "block.terranova.eclogite": "Eclogite",
+  "block.terranova.garnet_ore": "Garnet Ore",
+  "block.terranova.silk_thread_block": "Silk Thread Block",
+
+  "item.terranova.glass_jar": "Glass Jar",
+  "item.terranova.glowworm_jar": "Glass Jar of Glowworm",
+  "item.terranova.garnet": "Garnet",
 
   "creativetab.terranova.mod_items": "Items",
   "creativetab.terranova.mod_blocks": "Blocks",

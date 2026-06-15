@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "terranova:eclogite_patch",
+    "terranova:garnet_ore"
+  ],
+  "step": "underground_ores"
+}

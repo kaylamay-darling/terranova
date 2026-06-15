@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "terranova:block/glass_jar"
+    },
+    "hanging=true": {
+      "model": "terranova:block/glass_jar_hanging"
+    }
+  }
+}

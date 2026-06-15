@@ -28,6 +28,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WOODEN_HAFT);
                         output.accept(ModItems.BOVID_SHARD);
                         output.accept(ModItems.REFINED_BOVID_SHARD);
+                        output.accept(ModItems.RAW_HIDE);
                         output.accept(ModItems.CRUDE_HORN);
                         output.accept(ModItems.FIRESTARTER);
                         output.accept(ModItems.ASH);
@@ -40,6 +41,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ZINC_INGOT);
                         output.accept(ModItems.STEEL_ALLOY_INGOT);
                         output.accept(ModItems.STEEL_WIRE);
+                        output.accept(ModItems.GARNET);
+                        output.accept(ModItems.SILK_THREAD);
                     })
                     .build());
 
@@ -83,6 +86,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.WAXED_EXPOSED_ZINC);
                         output.accept(ModBlocks.WAXED_WEATHERED_ZINC);
                         output.accept(ModBlocks.WAXED_OXIDIZED_ZINC);
+                        output.accept(ModBlocks.ECLOGITE);
+                        output.accept(ModBlocks.GARNET_ORE);
+                        output.accept(ModBlocks.SILK_THREAD_BLOCK);
+                        output.accept(ModBlocks.GLASS_JAR);
+                        output.accept(ModBlocks.GLOWWORM_JAR);
                         output.accept(ModBlocks.RESIN_TORCH);
                     })
                     .build());

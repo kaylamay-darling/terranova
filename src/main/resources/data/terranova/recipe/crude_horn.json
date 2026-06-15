@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "terranova:refined_bovid_shard",
+    "minecraft:leather"
+  ],
+  "result": {
+    "id": "terranova:crude_horn"
+  }
+}

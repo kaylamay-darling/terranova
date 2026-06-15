@@ -6,6 +6,9 @@ import net.kaylamay.terranova.TerraNova;
 import net.kaylamay.terranova.registry.ModParticles;
 import net.kaylamay.terranova.registry.block.custom.*;
 import net.kaylamay.terranova.registry.item.ModItems;
+import net.kaylamay.terranova.registry.item.custom.GlassJarItem;
+import net.kaylamay.terranova.registry.item.custom.GlowwormJarItem;
+import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -39,15 +42,21 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
+
+import static net.kaylamay.terranova.registry.block.ModBlocks.BLOCKS;
 
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(TerraNova.MODID);
 
+    public static DeferredItem<GlassJarItem> GLASS_JAR_ITEM;
+    public static DeferredItem<GlowwormJarItem> GLOWWORM_JAR_ITEM;
+
     public static final DeferredBlock<Block> ZINC_ORE = registerBlock(
             "zinc_ore",
-            registryName -> new DropExperienceBlock(UniformInt.of(2, 4),
+            registryName -> new Block(
                     BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_ORE)
                             .setId(ResourceKey.create(Registries.BLOCK, registryName)
                             )
@@ -298,20 +307,6 @@ public class ModBlocks {
             )
     );
 
-    public static final DeferredBlock<Block> BROWN_CREEPING_MUSHROOM = registerBlockWithCustomItem(
-            "brown_creeping_mushroom",
-            registryName -> new CreepingMushroomBlock(
-                    BlockBehaviour.Properties.of()
-                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
-                            .noOcclusion().noCollision().randomTicks()
-            ),
-            props -> props.food(new FoodProperties.Builder()
-                    .nutrition(2)
-                    .saturationModifier(3.6f)
-                    .build()
-            )
-    );
-
     public static final DeferredBlock<Block> RED_CREEPING_MUSHROOM = registerBlockWithCustomItem(
             "red_creeping_mushroom",
             registryName -> new CreepingMushroomBlock(
@@ -319,6 +314,22 @@ public class ModBlocks {
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
                             .noOcclusion().noCollision().randomTicks()
             ),
+            BlockItem::new,
+            props -> props.food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(3.6f)
+                    .build()
+            )
+    );
+
+    public static final DeferredBlock<Block> BROWN_CREEPING_MUSHROOM = registerBlockWithCustomItem(
+            "brown_creeping_mushroom",
+            registryName -> new CreepingMushroomBlock(
+                    BlockBehaviour.Properties.of()
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .noOcclusion().noCollision().randomTicks()
+            ),
+            BlockItem::new,
             props -> props.food(new FoodProperties.Builder()
                     .nutrition(2)
                     .saturationModifier(3.6f)
@@ -360,8 +371,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> KILN = registerBlock(
             "kiln",
             registryName -> new KilnBlock(
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.FURNACE)
+                    BlockBehaviour.Properties.of()
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .strength(3.5f, 3.5f)
+                            .sound(SoundType.STONE)
             )
     );
 
@@ -393,6 +406,69 @@ public class ModBlocks {
             Direction.DOWN
     );
 
+    public static final DeferredBlock<Block> ECLOGITE = registerBlock(
+            "eclogite",
+            registryName -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .sound(SoundType.STONE)
+                            .strength(40.0f, 1200.0f)
+            )
+    );
+
+    public static final DeferredBlock<Block> SILK_THREAD_BLOCK = registerBlock(
+            "silk_thread_block",
+            registryName -> new SilkThreadBlock(
+                    BlockBehaviour.Properties.of()
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .noCollision()
+                            .noOcclusion()
+                            .instabreak()
+                            .sound(SoundType.COBWEB)
+                            .lightLevel(state -> 14)
+                            .offsetType(BlockBehaviour.OffsetType.XZ)
+                            .randomTicks()
+            )
+    );
+
+    public static final DeferredBlock<GlassJarBlock> GLASS_JAR = registerJarBlock(
+            "glass_jar",
+            registryName -> new GlassJarBlock(
+                    BlockBehaviour.Properties.of()
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .noOcclusion()
+                            .sound(SoundType.GLASS)
+                            .instabreak()
+            ),
+            GlassJarItem::new,
+            props -> props,
+            item -> GLASS_JAR_ITEM = item
+    );
+
+    public static final DeferredBlock<GlowwormJarBlock> GLOWWORM_JAR = registerJarBlock(
+            "glowworm_jar",
+            registryName -> new GlowwormJarBlock(
+                    BlockBehaviour.Properties.of()
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .lightLevel(state -> 8)
+                            .noOcclusion()
+                            .sound(SoundType.GLASS)
+                            .instabreak()
+            ),
+            GlowwormJarItem::new,
+            props -> props,
+            item -> GLOWWORM_JAR_ITEM = item
+    );
+
+    public static final DeferredBlock<Block> GARNET_ORE = registerBlock(
+            "garnet_ore",
+            registryName -> new DropExperienceBlock(UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_ORE)
+                            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                            .strength(60.0f, 1200.0f)
+                            .sound(SoundType.STONE)
+            ));
+
     private static <T extends Block> void registerBlockItem(String name, Supplier<T> block, Item.Properties properties) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), properties));
     }
@@ -407,17 +483,38 @@ public class ModBlocks {
         return toReturn;
     }
 
-    private static <T extends Block> DeferredBlock<Block> registerBlockWithCustomItem(String name, Function<Identifier, ? extends T> block, Function<Item.Properties, Item.Properties> itemProperties) {
+    private static <T extends Block> DeferredBlock<Block> registerBlockWithCustomItem(
+            String name,
+            Function<Identifier, ? extends T> block,
+            BiFunction<Block, Item.Properties, BlockItem> itemFactory,
+            Function<Item.Properties, Item.Properties> itemProperties) {
+
         DeferredBlock<Block> toReturn = BLOCKS.register(name, block);
         ModItems.ITEMS.register(name, () -> {
             Identifier id = toReturn.getId();
             ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(id.getNamespace(), id.getPath()));
-            return new BlockItem(
-                    toReturn.get(),
-                    itemProperties.apply(new Item.Properties().setId(key))
-            );
+            return itemFactory.apply(toReturn.get(), itemProperties.apply(new Item.Properties().setId(key)));
         });
         return toReturn;
+    }
+
+    private static <T extends Block, I extends BlockItem> DeferredBlock<T> registerJarBlock(
+            String name,
+            Function<Identifier, ? extends T> blockFactory,
+            BiFunction<Block, Item.Properties, I> itemFactory,
+            Function<Item.Properties, Item.Properties> itemProperties,
+            java.util.function.Consumer<DeferredItem<I>> itemConsumer) {
+
+        DeferredBlock<T> block = BLOCKS.register(name, blockFactory);
+
+        DeferredItem<I> item = ModItems.ITEMS.register(name, () -> {
+            Identifier id = block.getId();
+            ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(id.getNamespace(), id.getPath()));
+            return itemFactory.apply(block.get(), itemProperties.apply(new Item.Properties().setId(key)));
+        });
+
+        itemConsumer.accept(item);
+        return block;
     }
 
     private static <T extends Block> DeferredBlock<Block> registerStandingAndWallBlock(

@@ -7,6 +7,13 @@
     "terranova:zinc_block",
     "terranova:exposed_zinc",
     "terranova:weathered_zinc",
-    "terranova:oxidized_zinc"
+    "terranova:oxidized_zinc",
+    "terranova:waxed_zinc_block",
+    "terranova:waxed_exposed_zinc",
+    "terranova:waxed_weathered_zinc",
+    "terranova:waxed_oxidized_zinc",
+    "terranova:kiln",
+    "terranova:eclogite",
+    "terranova:garnet_ore"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "item/crude_horn"
+    "layer0": "terranova:item/crude_horn"
   },
   "display": {
     "thirdperson_righthand": {

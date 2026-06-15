@@ -4,6 +4,7 @@ import net.kaylamay.terranova.event.BlockEvents;
 import net.kaylamay.terranova.event.PlayerEvents;
 import net.kaylamay.terranova.registry.*;
 import net.kaylamay.terranova.registry.block.ModBlocks;
+import net.kaylamay.terranova.registry.entity.ModEntities;
 import net.kaylamay.terranova.registry.item.ModItems;
 import net.kaylamay.terranova.worldgen.feature.ModFeatures;
 import net.minecraft.client.particle.FlameParticle;
@@ -38,6 +39,7 @@ public class TerraNova {
 
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
+        ModEntities.ENTITY_TYPES.register(modEventBus);
 
         ModRecipeSerializers.register(modEventBus);
         ModRecipeTypes.register(modEventBus);
