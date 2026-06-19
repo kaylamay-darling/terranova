@@ -11,7 +11,7 @@
         "Name": "minecraft:deepslate"
       }
     },
-    "replaceable": "#minecraft:cave_vines_plantable_on",
+    "replaceable": "#minecraft:base_stone_overworld",
     "vegetation_chance": 0.4,
     "xz_radius": {
       "type": "minecraft:uniform",

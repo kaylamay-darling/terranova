@@ -1,5 +1,6 @@
 package net.kaylamay.terranova.registry.loot;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -16,11 +17,14 @@ import net.neoforged.neoforge.common.loot.LootModifier;
 
 public class LeavesStickModifier extends LootModifier {
     public static final MapCodec<LeavesStickModifier> CODEC = RecordCodecBuilder.mapCodec(inst ->
-            codecStart(inst).apply(inst, LeavesStickModifier::new)
+            inst.group(
+                    LOOT_CONDITIONS_CODEC.fieldOf("conditions").forGetter(m -> m.conditions),
+                    Codec.INT.optionalFieldOf("priority", 0).forGetter(m -> m.priority)
+            ).apply(inst, LeavesStickModifier::new)
     );
 
-    public LeavesStickModifier(LootItemCondition[] conditions) {
-        super(conditions);
+    public LeavesStickModifier(LootItemCondition[] conditions, int priority) {
+        super(conditions, priority);
     }
 
     @Override

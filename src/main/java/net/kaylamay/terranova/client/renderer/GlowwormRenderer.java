@@ -5,8 +5,6 @@ import net.kaylamay.terranova.client.model.GlowwormModel;
 import net.kaylamay.terranova.client.model.GlowwormRenderState;
 import net.kaylamay.terranova.registry.entity.custom.GlowwormEntity;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
@@ -51,7 +49,7 @@ public class GlowwormRenderer extends MobRenderer<GlowwormEntity, GlowwormRender
 
     @Override
     protected void setupRotations(GlowwormRenderState state, PoseStack poseStack, float bodyRot, float entityScale) {
-        Quaternionf cameraRotation = new Quaternionf(Minecraft.getInstance().gameRenderer.getMainCamera().rotation());
+        Quaternionf cameraRotation = new Quaternionf(Minecraft.getInstance().gameRenderer.mainCamera().rotation());
         poseStack.mulPose(cameraRotation);
     }
 

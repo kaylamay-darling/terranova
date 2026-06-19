@@ -2,8 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1,
-      "bonus_rolls": 0,
+      "rolls": 1.0,
       "entries": [
         {
           "type": "minecraft:alternatives",
@@ -14,12 +13,14 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "enchantments": [
-                      {
-                        "enchantment": "minecraft:silk_touch",
-                        "levels": { "min": 1 }
-                      }
-                    ]
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:silk_touch",
+                          "levels": { "min": 1 }
+                        }
+                      ]
+                    }
                   }
                 }
               ],
@@ -27,17 +28,12 @@
             },
             {
               "type": "minecraft:item",
-              "name": "terranova:silk_thread",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": 1
-                }
-              ]
+              "name": "terranova:silk_thread"
             }
           ]
         }
       ]
     }
-  ]
+  ],
+  "random_sequence": "terranova:blocks/silk_thread_block"
 }

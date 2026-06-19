@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "CZ",
+    "ZC"
+  ],
+  "key": {
+    "C": "minecraft:copper_ingot",
+    "Z": "terranova:zinc_ingot"
+  },
+  "result": {
+    "id": "terranova:brass_alloy_ingot",
+    "count": 2
+  }
+}

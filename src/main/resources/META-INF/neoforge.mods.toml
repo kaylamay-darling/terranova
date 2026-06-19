@@ -1,14 +1,16 @@
+# The loader version for modern NeoForge is "[1,)"
+modLoader="javafml"
+loaderVersion="[1,)"
 license="All Rights Reserved"
+issueTrackerURL="https://github.com/kaylamay-darling/terranova/issues"
 
 [[mods]]
 modId="terranova"
-version="1.2.0"
+version="${mod_version}" # Uses your gradle.properties value
 displayName="Terra Nova"
 logoFile="icon.png"
 displayURL="https://github.com/kaylamay-darling/terranova"
-
 authors="Kayla May (Code / Art), Kaya (Art)"
-
 description='''
 Enhances the Vanilla progression system, while adding world-building features. More to come...
 '''
@@ -16,16 +18,18 @@ Enhances the Vanilla progression system, while adding world-building features. M
 [[mixins]]
 config = "terranova.mixins.json"
 
+# NeoForge dependency
 [[dependencies.terranova]]
 modId="neoforge"
-type="required"
-versionRange="[26.1,)"
+mandatory=true
+versionRange="[26.2,)"
 ordering="NONE"
 side="BOTH"
 
+# Minecraft dependency
 [[dependencies.terranova]]
 modId="minecraft"
-type="required"
-versionRange="[26.1.2,)"
+mandatory=true
+versionRange="[26.2,)"
 ordering="NONE"
 side="BOTH"

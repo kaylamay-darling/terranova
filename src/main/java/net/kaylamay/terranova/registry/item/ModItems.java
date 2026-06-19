@@ -201,6 +201,12 @@ public class ModItems {
                     .setId(ResourceKey.create(Registries.ITEM, registryName)))
     );
 
+    public static final DeferredItem<Item> BRASS_ALLOY_INGOT = ITEMS.register(
+            "brass_alloy_ingot",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName)))
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

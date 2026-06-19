@@ -40,6 +40,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ZINC_NUGGET);
                         output.accept(ModItems.ZINC_INGOT);
                         output.accept(ModItems.STEEL_ALLOY_INGOT);
+                        output.accept(ModItems.BRASS_ALLOY_INGOT);
                         output.accept(ModItems.STEEL_WIRE);
                         output.accept(ModItems.GARNET);
                         output.accept(ModItems.SILK_THREAD);
